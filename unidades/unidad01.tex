@@ -46,8 +46,15 @@ Por ello, la distancia de $P$ al eje $x$ es $|y|$ y su distancia al eje $y$
 es $|x|$.
 
 \begin{example}{Proyecciones y distancia a los ejes}{proyecciones}
-Para $P(-4,3)$, las proyecciones son $(-4,0)$ y $(0,3)$. El punto está a
-$3$ unidades del eje $x$ y a $4$ unidades del eje $y$.
+Para $P(-4,3)$:
+\begin{enumerate}[label=\textbf{Paso \arabic*.}]
+  \item Para proyectar sobre el eje $x$, conservamos $x=-4$ y hacemos $y=0$:
+  $P_x=(-4,0)$.
+  \item Para proyectar sobre el eje $y$, hacemos $x=0$ y conservamos $y=3$:
+  $P_y=(0,3)$.
+  \item La distancia al eje $x$ es $|3|=3$ y la distancia al eje $y$ es
+  $|-4|=4$.
+\end{enumerate}
 \end{example}
 
 \subsection{Simetrías elementales}
@@ -63,8 +70,14 @@ Cambiar el signo de una coordenada produce una reflexión:
 \]
 
 \begin{example}{Puntos simétricos}{simetria}
-Si $A(3,-2)$, sus simétricos respecto del eje $x$, del eje $y$ y del origen
-son, respectivamente, $(3,2)$, $(-3,-2)$ y $(-3,2)$.
+Si $A(3,-2)$:
+\begin{enumerate}[label=\textbf{Paso \arabic*.}]
+  \item Respecto del eje $x$, conservamos $x$ y cambiamos el signo de $y$:
+  $(3,2)$.
+  \item Respecto del eje $y$, cambiamos el signo de $x$ y conservamos $y$:
+  $(-3,-2)$.
+  \item Respecto del origen, cambiamos ambos signos: $(-3,2)$.
+\end{enumerate}
 \end{example}
 
 \begin{example}{Ubicación de puntos}{ubicar}
@@ -84,6 +97,8 @@ Ubica $A(3,2)$, $B(-2,3)$, $C(-3,-2)$ y $D(2,-3)$.
 \end{tikzpicture}
 \end{center}
 Los puntos están, respectivamente, en los cuadrantes I, II, III y IV.
+Para ubicarlos se avanza primero sobre el eje $x$ y después, desde esa
+posición, en dirección paralela al eje $y$.
 \end{example}
 
 \begin{exercise}{Coordenadas y cuadrantes}{cuadrantes}
@@ -147,24 +162,40 @@ $d=|y_2-y_1|$.
 \begin{example}{Cálculo de una distancia}{distancia}
 Calcula la distancia entre $A(-2,1)$ y $B(4,5)$.
 \begin{solution}
+\textbf{Paso 1.} Identificamos las coordenadas:
+$x_1=-2$, $y_1=1$, $x_2=4$ y $y_2=5$.
+
+\textbf{Paso 2.} Calculamos los desplazamientos:
+\[
+\Delta x=4-(-2)=6,
+\qquad
+\Delta y=5-1=4.
+\]
+
+\textbf{Paso 3.} Sustituimos en la fórmula y simplificamos:
 \[
 d=\sqrt{(4-(-2))^2+(5-1)^2}
  =\sqrt{6^2+4^2}=\sqrt{52}=2\sqrt{13}.
 \]
-La distancia es $2\sqrt{13}\approx 7.21$ unidades.
+\textbf{Paso 4.} Aproximamos solo al final:
+$d=2\sqrt{13}\approx 7.21$ unidades.
 \end{solution}
 \end{example}
 
 \begin{example}{Punto equidistante}{equidistante}
 Determina si $P(2,1)$ está a la misma distancia de $A(-1,5)$ y $B(6,4)$.
 \begin{solution}
-Es suficiente comparar los cuadrados de las distancias:
+\textbf{Paso 1.} Para evitar raíces, comparamos los cuadrados de las
+distancias:
 \[
 PA^2=(2+1)^2+(1-5)^2=25,
 \qquad
 PB^2=(2-6)^2+(1-4)^2=25.
 \]
-Por tanto, $PA=PB=5$ y $P$ es equidistante de $A$ y $B$.
+\textbf{Paso 2.} Como $PA^2=PB^2$, las distancias son iguales.
+
+\textbf{Paso 3.} Calculamos su valor: $PA=PB=\sqrt{25}=5$. Por tanto, $P$
+es equidistante de $A$ y $B$.
 \end{solution}
 \end{example}
 
@@ -203,6 +234,15 @@ Si $A(x_1,y_1)$ y $B(x_2,y_2)$, entonces
 \begin{example}{Punto medio}{medio}
 Halla el punto medio del segmento cuyos extremos son $A(-5,3)$ y $B(7,-1)$.
 \begin{solution}
+\textbf{Paso 1.} Promediamos las abscisas:
+\[
+x_M=\frac{-5+7}{2}=1.
+\]
+\textbf{Paso 2.} Promediamos las ordenadas:
+\[
+y_M=\frac{3+(-1)}{2}=1.
+\]
+\textbf{Paso 3.} Escribimos el punto:
 \[
 M=\left(\frac{-5+7}{2},\frac{3+(-1)}{2}\right)=(1,1).
 \]
@@ -212,12 +252,17 @@ M=\left(\frac{-5+7}{2},\frac{3+(-1)}{2}\right)=(1,1).
 \begin{example}{Extremo desconocido}{extremo}
 El punto medio de $AB$ es $M(3,2)$ y $A(-1,5)$. Determina $B(x,y)$.
 \begin{solution}
+\textbf{Paso 1.} Sustituimos cada coordenada conocida en la fórmula del punto
+medio.
 \[
 3=\frac{-1+x}{2}\Rightarrow x=7,
 \qquad
 2=\frac{5+y}{2}\Rightarrow y=-1.
 \]
-Por tanto, $B(7,-1)$.
+\textbf{Paso 2.} Reunimos las coordenadas obtenidas: $B(7,-1)$.
+
+\textbf{Paso 3.} Comprobamos:
+$\bigl((-1+7)/2,(5-1)/2\bigr)=(3,2)=M$.
 \end{solution}
 \end{example}
 
@@ -225,11 +270,14 @@ Por tanto, $B(7,-1)$.
 Dos vértices opuestos de un rectángulo son $A(-3,-1)$ y $C(5,7)$. Encuentra
 el centro del rectángulo.
 \begin{solution}
-Las diagonales de un rectángulo se bisecan, así que su centro es el punto medio
-de $AC$:
+\textbf{Paso 1.} Usamos la propiedad geométrica: las diagonales de un
+rectángulo se bisecan, por lo que el centro es el punto medio de $AC$.
+
+\textbf{Paso 2.} Promediamos las coordenadas:
 \[
 M=\left(\frac{-3+5}{2},\frac{-1+7}{2}\right)=(1,3).
 \]
+\textbf{Paso 3.} Concluimos que el centro del rectángulo es $(1,3)$.
 \end{solution}
 \end{example}
 
@@ -275,12 +323,15 @@ aparecen cruzados. Si $m=n$, la fórmula se reduce al punto medio.
 \begin{example}{División interna}{division}
 El punto $P$ divide el segmento de $A(1,2)$ a $B(10,8)$ en la razón $AP:PB=2:1$.
 \begin{solution}
-Aquí $m=2$ y $n=1$:
+\textbf{Paso 1.} Identificamos $m=2$ y $n=1$ a partir de $AP:PB=2:1$.
+
+\textbf{Paso 2.} Sustituimos cada coordenada:
 \[
 P=\left(\frac{1(1)+2(10)}{3},
          \frac{1(2)+2(8)}{3}\right)=(7,6).
 \]
-Como $AP$ es dos veces $PB$, $P$ queda más cerca de $B$.
+\textbf{Paso 3.} Interpretamos: como $AP$ es dos veces $PB$, el resultado
+$P(7,6)$ debe quedar más cerca de $B$, tal como ocurre.
 \end{solution}
 \end{example}
 
@@ -288,11 +339,17 @@ Como $AP$ es dos veces $PB$, $P$ queda más cerca de $B$.
 Encuentra el punto que está a tres quintas partes del recorrido de
 $A(-2,4)$ a $B(8,-6)$.
 \begin{solution}
-El desplazamiento total es $B-A=(10,-10)$. Entonces
+\textbf{Paso 1.} Calculamos el desplazamiento total:
+\[
+B-A=(8-(-2),-6-4)=(10,-10).
+\]
+\textbf{Paso 2.} Tomamos tres quintas partes del desplazamiento y las sumamos
+al punto inicial:
 \[
 P=A+\frac35(B-A)=(-2,4)+\frac35(10,-10)=(4,-2).
 \]
-La razón correspondiente es $AP:PB=3:2$.
+\textbf{Paso 3.} Las tres partes recorridas y las dos restantes muestran que
+la razón correspondiente es $AP:PB=3:2$.
 \end{solution}
 \end{example}
 
@@ -322,63 +379,122 @@ triángulo es rectángulo.
 \begin{example}{Triángulo en el plano}{triangulo}
 Sean $A(0,0)$, $B(4,0)$ y $C(0,3)$.
 \begin{solution}
+\textbf{Paso 1.} Calculamos las longitudes de los tres lados:
 \[
 AB=4,\qquad AC=3,\qquad BC=\sqrt{(-4)^2+3^2}=5.
 \]
-El perímetro es $3+4+5=12$. Además,
+\textbf{Paso 2.} Sumamos para obtener el perímetro:
+$P=3+4+5=12$.
+
+\textbf{Paso 3.} Verificamos el teorema de Pitágoras usando el lado mayor:
 \[
 3^2+4^2=5^2,
 \]
-así que el triángulo es rectángulo.
+por lo tanto, el triángulo es rectángulo.
 \end{solution}
 \end{example}
 
 \begin{example}{Clasificación mediante distancias}{clasificacion}
 Clasifica el triángulo $A(-1,0)$, $B(3,2)$ y $C(1,6)$ por sus lados.
 \begin{solution}
+\textbf{Paso 1.} Calculamos los cuadrados de las longitudes para no trabajar
+con radicales:
 \[
 AB^2=4^2+2^2=20,\qquad
 BC^2=(-2)^2+4^2=20,\qquad
 CA^2=(-2)^2+(-6)^2=40.
 \]
-Tiene dos lados iguales, así que es isósceles. Además,
-$AB^2+BC^2=CA^2$; también es rectángulo.
+\textbf{Paso 2.} Como $AB^2=BC^2$, entonces $AB=BC$ y el triángulo es
+isósceles.
+
+\textbf{Paso 3.} Además, $AB^2+BC^2=CA^2$; por el recíproco del teorema de
+Pitágoras, también es rectángulo.
 \end{solution}
 \end{example}
 
-\subsection{Área de un triángulo}
+\subsection{Área de un polígono de n vértices}
 
-Para $A(x_1,y_1)$, $B(x_2,y_2)$ y $C(x_3,y_3)$:
-\begin{formula}
+Sea un polígono simple cuyos vértices
 \[
-\boxed{\mathcal A=\frac12\left|
-x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)
-\right|}.
+P_1(x_1,y_1),\ P_2(x_2,y_2),\ldots,\ P_n(x_n,y_n)
+\]
+están escritos consecutivamente alrededor de su contorno, en sentido horario
+o antihorario. Para cerrar el recorrido se toma
+$P_{n+1}=P_1$.
+
+\begin{formula}[title={Fórmula del cordón o de Gauss}]
+\[
+\boxed{
+\mathcal A=\frac12\left|
+\sum_{i=1}^{n}\bigl(x_i y_{i+1}-y_i x_{i+1}\bigr)
+\right|}
+\]
+De forma desarrollada:
+\[
+\mathcal A=\frac12\left|
+(x_1y_2+\cdots+x_ny_1)-(y_1x_2+\cdots+y_nx_1)
+\right|.
 \]
 \end{formula}
 
-El valor absoluto garantiza un área no negativa. Si la expresión dentro del
-valor absoluto es cero, los tres puntos son colineales.
+El valor absoluto hace que el área sea positiva sin importar el sentido en
+que se enumeren los vértices. La fórmula sirve para triángulos, cuadriláteros
+y, en general, cualquier polígono simple; no debe alterarse el orden de los
+vértices ni cruzar diagonales al listarlos.
 
-\begin{example}{Área mediante coordenadas}{area}
-Calcula el área del triángulo $A(1,1)$, $B(5,1)$ y $C(3,4)$.
+\begin{algorithm}{Aplicación de la fórmula del cordón}{cordon}
+\begin{enumerate}
+  \item Escribe los vértices en orden alrededor del polígono.
+  \item Repite el primer vértice al final de la tabla.
+  \item Suma los productos diagonales $x_i y_{i+1}$.
+  \item Suma los productos diagonales $y_i x_{i+1}$.
+  \item Resta las sumas, toma el valor absoluto y divide entre $2$.
+\end{enumerate}
+\end{algorithm}
+
+\begin{example}{Área de un cuadrilátero}{area}
+Calcula el área del polígono con vértices consecutivos
+$A(1,1)$, $B(5,1)$, $C(6,4)$ y $D(2,5)$.
 \begin{solution}
+\textbf{Paso 1.} Repetimos el primer vértice y organizamos los productos:
 \[
-\mathcal A=\frac12|1(1-4)+5(4-1)+3(1-1)|
-=\frac12|-3+15|=6.
+\begin{array}{c|c|c|c}
+P_i & (x_i,y_i) & x_i y_{i+1} & y_i x_{i+1}\\ \hline
+A&(1,1)&1(1)=1&1(5)=5\\
+B&(5,1)&5(4)=20&1(6)=6\\
+C&(6,4)&6(5)=30&4(2)=8\\
+D&(2,5)&2(1)=2&5(1)=5
+\end{array}
 \]
-El área es $6$ unidades cuadradas.
+
+\textbf{Paso 2.} Sumamos cada columna:
+\[
+\sum x_i y_{i+1}=53,
+\qquad
+\sum y_i x_{i+1}=24.
+\]
+
+\textbf{Paso 3.} Restamos, tomamos valor absoluto y dividimos entre $2$:
+\[
+\mathcal A=\frac12|53-24|=\frac{29}{2}=14.5.
+\]
+El área es $14.5$ unidades cuadradas.
 \end{solution}
 \end{example}
+
+Para tres vértices la misma fórmula produce el área de un triángulo. Si el
+resultado es cero, los tres puntos son colineales.
 
 \begin{example}{Comprobación de colinealidad}{colinealidad}
 Determina si $A(-1,2)$, $B(2,4)$ y $C(5,6)$ están alineados.
 \begin{solution}
+\textbf{Paso 1.} Aplicamos la fórmula del cordón a los tres vértices:
 \[
 \mathcal A=\frac12|-1(4-6)+2(6-2)+5(2-4)|
 =\frac12|2+8-10|=0.
 \]
-Como el área del triángulo es cero, los puntos son colineales.
+\textbf{Paso 2.} Interpretamos el resultado. Como no se forma una región con
+área positiva, los tres puntos están sobre una misma recta; son colineales.
 \end{solution}
 \end{example}
 
