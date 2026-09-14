@@ -1,0 +1,122 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{geometria}[2026/09/14 Estilo para notas de geometria analitica]
+
+% ``provide=*`` permite usar los datos modernos de idioma cuando una
+% instalación mínima de TeX Live no incluye spanish.ldf.
+\RequirePackage[provide=*,spanish]{babel}
+\RequirePackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+\RequirePackage[letterpaper,margin=2.25cm,headheight=15pt]{geometry}
+\RequirePackage{microtype}
+\RequirePackage{amsmath,amssymb,mathtools}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,calc,intersections,patterns,positioning}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{amsthm}
+\RequirePackage{hyperref}
+\RequirePackage[capitalise,noabbrev]{cleveref}
+\RequirePackage{fancyhdr}
+
+\definecolor{GAazul}{HTML}{315B7D}
+\definecolor{GAverde}{HTML}{4B7F66}
+\definecolor{GArosa}{HTML}{A95C74}
+\definecolor{GAdorado}{HTML}{B07D38}
+\definecolor{GAmorado}{HTML}{765A8E}
+\definecolor{Garojo}{HTML}{A84448}
+\definecolor{Gatinta}{HTML}{263238}
+\definecolor{Gapapel}{HTML}{FCFAF5}
+\definecolor{Gagris}{HTML}{EEF1F3}
+
+\pagecolor{Gapapel}
+\color{Gatinta}
+\hypersetup{colorlinks=true,linkcolor=GAazul,urlcolor=GAmorado,citecolor=GAverde}
+\setlist{itemsep=.25em,topsep=.4em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small Geometría Analítica}
+\fancyhead[R]{\sffamily\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{.4pt}
+
+\newtheoremstyle{ga}%
+  {.7em}{.7em}{\normalfont}{}% espacio y cuerpo
+  {\bfseries\color{GAazul}}{.5em}{.6em}{}
+\theoremstyle{ga}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{claim}[theorem]{Afirmación}
+
+\tcbset{
+  ga/.style={enhanced,breakable,boxrule=0pt,frame hidden,
+    colback=white,sharp corners,leftrule=2.2pt,
+    left=3mm,right=2mm,top=1.5mm,bottom=1.5mm,
+    before skip=8pt,after skip=8pt,
+    fonttitle=\bfseries\sffamily}
+}
+
+\newtcbtheorem[number within=chapter]{definition}{Definición}%
+  {ga,colback=GAazul!5,leftrule=2.5pt,colframe=GAazul,coltitle=GAazul}{def}
+\newtcbtheorem[use counter from=definition]{notation}{Notación}%
+  {ga,colback=GAmorado!5,colframe=GAmorado,coltitle=GAmorado}{not}
+\newtcbtheorem[number within=chapter]{example}{Ejemplo}%
+  {ga,colback=GAverde!5,colframe=GAverde,coltitle=GAverde}{ej}
+\newtcbtheorem[number within=chapter]{exercise}{Ejercicio}%
+  {ga,colback=GAdorado!5,colframe=GAdorado,coltitle=GAdorado}{exe}
+\newtcbtheorem[number within=chapter]{problem}{Problema}%
+  {ga,colback=Garojo!5,colframe=Garojo,coltitle=Garojo}{prob}
+\newtcbtheorem[number within=chapter]{question}{Pregunta}%
+  {ga,colback=GAmorado!5,colframe=GAmorado,coltitle=GAmorado}{preg}
+\newtcbtheorem[number within=chapter]{algorithm}{Algoritmo}%
+  {ga,colback=GAazul!5,colframe=GAazul,coltitle=GAazul}{alg}
+
+\newtcolorbox{solution}[1][]{ga,colback=GAverde!4,colframe=GAverde,
+  coltitle=GAverde,title={Solución},#1}
+\newtcolorbox{remark}[1][]{ga,colback=Gagris,colframe=Gatinta!60,
+  coltitle=Gatinta,title={Observación},#1}
+\newtcolorbox{hints}[1][]{ga,colback=GAdorado!5,colframe=GAdorado,
+  coltitle=GAdorado,title={Pistas},#1}
+\newtcolorbox{intuition}[1][]{ga,colback=GAmorado!5,colframe=GAmorado,
+  coltitle=GAmorado,title={Idea geométrica},#1}
+\newtcolorbox{properties}[1][]{ga,colback=GAazul!5,colframe=GAazul,
+  coltitle=GAazul,title={Propiedades},#1}
+\newtcolorbox{formula}[1][]{enhanced,breakable,colback=GArosa!7,
+  colframe=GArosa,boxrule=.6pt,arc=1mm,fonttitle=\bfseries\sffamily,
+  coltitle=GArosa,title={Fórmula clave},#1}
+
+\renewenvironment{proof}[1][Demostración]{%
+  \par\pushQED{\qed}\normalfont
+  \topsep6pt\trivlist\item[\hskip\labelsep\bfseries\color{GAazul}#1.]}%
+  {\popQED\endtrivlist}
+
+\crefname{theorem}{teorema}{teoremas}
+\crefname{lemma}{lema}{lemas}
+\crefname{corollary}{corolario}{corolarios}
+\crefname{proposition}{proposición}{proposiciones}
+\crefname{definition}{definición}{definiciones}
+\crefname{example}{ejemplo}{ejemplos}
+\crefname{exercise}{ejercicio}{ejercicios}
+\crefname{problem}{problema}{problemas}
+
+\pgfplotsset{
+  ga axis/.style={axis lines=middle,axis line style={-Latex},
+    grid=both,minor tick num=1,major grid style={Gatinta!16},
+    minor grid style={Gatinta!7},tick label style={font=\small},
+    xlabel={$x$},ylabel={$y$},every axis x label/.style={at={(ticklabel* cs:1)},anchor=west},
+    every axis y label/.style={at={(ticklabel* cs:1)},anchor=south}}
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dist}{\operatorname{d}}

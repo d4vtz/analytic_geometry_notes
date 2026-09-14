@@ -1,0 +1,273 @@
+\chapter{Sistema de coordenadas y segmentos en el plano}
+
+\begin{center}
+\begin{minipage}{.88\textwidth}
+\small\sffamily
+\textbf{Propósito.} Ubicar puntos y resolver problemas geométricos mediante
+distancia, punto medio y división de segmentos.
+\end{minipage}
+\end{center}
+
+\section{El plano cartesiano}
+
+\begin{definition}{Plano cartesiano}{plano}
+El plano cartesiano está formado por dos rectas numéricas perpendiculares: el
+eje horizontal $x$ y el eje vertical $y$. Su intersección es el origen
+$O(0,0)$. Un punto se representa mediante un par ordenado $P(x,y)$.
+\end{definition}
+
+El signo de las coordenadas determina el cuadrante:
+\[
+\text{I }(+,+),\qquad \text{II }(-,+),\qquad
+\text{III }(-,-),\qquad \text{IV }(+,-).
+\]
+Los puntos sobre los ejes no pertenecen a ningún cuadrante.
+
+\begin{example}{Ubicación de puntos}{ubicar}
+Ubica $A(3,2)$, $B(-2,3)$, $C(-3,-2)$ y $D(2,-3)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[ga axis,width=8cm,height=7cm,xmin=-4,xmax=4,ymin=-4,ymax=4,
+  xtick={-3,...,3},ytick={-3,...,3}]
+\addplot[only marks,mark=*,mark size=2.2pt,GArosa]
+  coordinates {(3,2) (-2,3) (-3,-2) (2,-3)};
+\node[above right] at (axis cs:3,2) {$A$};
+\node[above left] at (axis cs:-2,3) {$B$};
+\node[below left] at (axis cs:-3,-2) {$C$};
+\node[below right] at (axis cs:2,-3) {$D$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+Los puntos están, respectivamente, en los cuadrantes I, II, III y IV.
+\end{example}
+
+\begin{exercise}{Coordenadas y cuadrantes}{cuadrantes}
+Indica el cuadrante o eje al que pertenece cada punto:
+$P(-5,2)$, $Q(0,-4)$, $R(3,-1)$, $S(-2,-6)$ y $T(4,0)$.
+\end{exercise}
+
+\section{Distancia entre dos puntos}
+
+Sean $P_1(x_1,y_1)$ y $P_2(x_2,y_2)$. Las diferencias horizontal y vertical
+son
+\[
+\Delta x=x_2-x_1,\qquad \Delta y=y_2-y_1.
+\]
+
+\begin{intuition}
+Estas diferencias son los catetos de un triángulo rectángulo. La distancia
+entre los puntos es su hipotenusa.
+\end{intuition}
+
+Por el teorema de Pitágoras,
+\[
+d^2=(\Delta x)^2+(\Delta y)^2.
+\]
+
+\begin{formula}
+\[
+\boxed{d(P_1,P_2)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}}
+\]
+\end{formula}
+
+\begin{example}{Cálculo de una distancia}{distancia}
+Calcula la distancia entre $A(-2,1)$ y $B(4,5)$.
+\begin{solution}
+\[
+d=\sqrt{(4-(-2))^2+(5-1)^2}
+ =\sqrt{6^2+4^2}=\sqrt{52}=2\sqrt{13}.
+\]
+La distancia es $2\sqrt{13}\approx 7.21$ unidades.
+\end{solution}
+\end{example}
+
+\begin{remark}
+El orden de los puntos no modifica la distancia porque las diferencias están
+elevadas al cuadrado.
+\end{remark}
+
+\begin{exercise}{Práctica de distancia}{practica-distancia}
+Calcula la distancia entre cada pareja.
+\begin{enumerate}[label=\alph*)]
+  \item $A(1,2)$ y $B(5,5)$.
+  \item $C(-3,4)$ y $D(2,-8)$.
+  \item $E(-4,-1)$ y $F(-4,6)$.
+  \item $G(2,-3)$ y el origen.
+\end{enumerate}
+\end{exercise}
+
+\section{Punto medio de un segmento}
+
+El punto medio se obtiene promediando por separado las coordenadas de los
+extremos.
+
+\begin{formula}
+Si $A(x_1,y_1)$ y $B(x_2,y_2)$, entonces
+\[
+\boxed{M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right)}.
+\]
+\end{formula}
+
+\begin{example}{Punto medio}{medio}
+Halla el punto medio del segmento cuyos extremos son $A(-5,3)$ y $B(7,-1)$.
+\begin{solution}
+\[
+M=\left(\frac{-5+7}{2},\frac{3+(-1)}{2}\right)=(1,1).
+\]
+\end{solution}
+\end{example}
+
+\begin{example}{Extremo desconocido}{extremo}
+El punto medio de $AB$ es $M(3,2)$ y $A(-1,5)$. Determina $B(x,y)$.
+\begin{solution}
+\[
+3=\frac{-1+x}{2}\Rightarrow x=7,
+\qquad
+2=\frac{5+y}{2}\Rightarrow y=-1.
+\]
+Por tanto, $B(7,-1)$.
+\end{solution}
+\end{example}
+
+\begin{exercise}{Puntos medios}{practica-medio}
+\begin{enumerate}[label=\alph*)]
+  \item Halla el punto medio de $A(2,-3)$ y $B(8,5)$.
+  \item Halla el punto medio de $C(-7,4)$ y $D(3,-6)$.
+  \item Si $M(-2,3)$ es el punto medio de $A(4,1)$ y $B$, determina $B$.
+\end{enumerate}
+\end{exercise}
+
+\section{División de un segmento en una razón dada}
+
+Sea $P$ un punto que divide internamente el segmento $AB$ en la razón
+\[
+AP:PB=m:n.
+\]
+Entonces $P$ está más cerca del extremo asociado con el peso menor.
+
+\begin{formula}
+Para $A(x_1,y_1)$ y $B(x_2,y_2)$,
+\[
+\boxed{P\left(\frac{nx_1+mx_2}{m+n},
+                \frac{ny_1+my_2}{m+n}\right)}.
+\]
+\end{formula}
+
+\begin{remark}
+La coordenada de $A$ se multiplica por $n$ y la de $B$ por $m$: los pesos
+aparecen cruzados. Si $m=n$, la fórmula se reduce al punto medio.
+\end{remark}
+
+\begin{example}{División interna}{division}
+El punto $P$ divide el segmento de $A(1,2)$ a $B(10,8)$ en la razón $AP:PB=2:1$.
+\begin{solution}
+Aquí $m=2$ y $n=1$:
+\[
+P=\left(\frac{1(1)+2(10)}{3},
+         \frac{1(2)+2(8)}{3}\right)=(7,6).
+\]
+Como $AP$ es dos veces $PB$, $P$ queda más cerca de $B$.
+\end{solution}
+\end{example}
+
+\begin{exercise}{División de segmentos}{practica-division}
+\begin{enumerate}[label=\alph*)]
+  \item Divide el segmento de $A(-2,1)$ a $B(7,4)$ en razón $1:2$.
+  \item Divide el segmento de $C(3,-5)$ a $D(-7,5)$ en razón $3:2$.
+  \item Comprueba con la fórmula que la razón $1:1$ produce el punto medio.
+\end{enumerate}
+\end{exercise}
+
+\section{Aplicaciones geométricas}
+
+\subsection{Perímetro y clasificación de triángulos}
+
+Para hallar un perímetro se calcula la longitud de cada lado y se suman los
+resultados. Comparar las longitudes permite clasificar un triángulo.
+
+\begin{example}{Triángulo en el plano}{triangulo}
+Sean $A(0,0)$, $B(4,0)$ y $C(0,3)$.
+\begin{solution}
+\[
+AB=4,\qquad AC=3,\qquad BC=\sqrt{(-4)^2+3^2}=5.
+\]
+El perímetro es $3+4+5=12$. Además,
+\[
+3^2+4^2=5^2,
+\]
+así que el triángulo es rectángulo.
+\end{solution}
+\end{example}
+
+\subsection{Área de un triángulo}
+
+Para $A(x_1,y_1)$, $B(x_2,y_2)$ y $C(x_3,y_3)$:
+\begin{formula}
+\[
+\boxed{\mathcal A=\frac12\left|
+x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)
+\right|}.
+\]
+\end{formula}
+
+\begin{example}{Área mediante coordenadas}{area}
+Calcula el área del triángulo $A(1,1)$, $B(5,1)$ y $C(3,4)$.
+\begin{solution}
+\[
+\mathcal A=\frac12|1(1-4)+5(4-1)+3(1-1)|
+=\frac12|-3+15|=6.
+\]
+El área es $6$ unidades cuadradas.
+\end{solution}
+\end{example}
+
+\section{Ejercicios de unidad}
+
+\begin{exercise}{Ejercicios básicos}{unidad-basicos}
+\begin{enumerate}
+  \item Grafica $A(-4,3)$, $B(2,5)$, $C(3,-2)$ y $D(-1,-4)$.
+  \item Calcula la distancia entre $P(-6,2)$ y $Q(2,-4)$.
+  \item Halla el punto medio de $R(7,-3)$ y $S(-5,9)$.
+  \item El punto medio de $AB$ es $M(2,-1)$. Si $A(-3,4)$, halla $B$.
+  \item Divide el segmento de $A(0,0)$ a $B(12,9)$ en la razón $2:1$.
+  \item Verifica si $A(-1,1)$, $B(3,1)$ y $C(1,1+2\sqrt3)$ forman un
+  triángulo equilátero.
+\end{enumerate}
+\end{exercise}
+
+\begin{problem}{Aplicaciones}{unidad-aplicaciones}
+\begin{enumerate}
+  \item Los vértices de un terreno son $A(1,1)$, $B(7,1)$, $C(7,5)$ y
+  $D(1,5)$. Calcula su perímetro y área.
+  \item Determina si el triángulo $A(-2,1)$, $B(4,3)$ y $C(2,-3)$ es
+  isósceles. Justifica mediante distancias.
+  \item Un poste se colocará a la tercera parte del trayecto de $A(-3,2)$ a
+  $B(9,8)$, medida desde $A$. Obtén sus coordenadas.
+  \item Calcula el área del triángulo con vértices $(-2,-1)$, $(4,2)$ y
+  $(1,6)$.
+  \item Demuestra mediante distancias que los puntos $A(0,0)$, $B(6,2)$,
+  $C(4,8)$ y $D(-2,6)$ forman un cuadrado.
+\end{enumerate}
+\end{problem}
+
+\begin{hints}
+En el último problema compara los cuatro lados y las dos diagonales. Un
+cuadrado tiene cuatro lados iguales y diagonales iguales.
+\end{hints}
+
+\enlargethispage{5\baselineskip}
+\section*{Resumen}
+\addcontentsline{toc}{section}{Resumen}
+
+\begin{properties}
+Para $A(x_1,y_1)$ y $B(x_2,y_2)$:
+\[
+\begin{aligned}
+d(A,B)&=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2},\\[2mm]
+M&=\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right),\\[2mm]
+P_{m:n}&=\left(\frac{nx_1+mx_2}{m+n},
+\frac{ny_1+my_2}{m+n}\right).
+\end{aligned}
+\]
+\end{properties}
