@@ -8,6 +8,16 @@ distancia, punto medio y división de segmentos.
 \end{minipage}
 \end{center}
 
+\begin{properties}
+Al terminar la unidad podrás:
+\begin{itemize}
+  \item interpretar un par ordenado y localizar puntos en el plano;
+  \item obtener distancias, puntos medios y puntos que dividen segmentos;
+  \item comprobar propiedades de figuras mediante sus coordenadas;
+  \item calcular perímetros y áreas sin depender únicamente de un dibujo.
+\end{itemize}
+\end{properties}
+
 \section{El plano cartesiano}
 
 \begin{definition}{Plano cartesiano}{plano}
@@ -22,6 +32,40 @@ El signo de las coordenadas determina el cuadrante:
 \text{III }(-,-),\qquad \text{IV }(+,-).
 \]
 Los puntos sobre los ejes no pertenecen a ningún cuadrante.
+
+\subsection{Abscisa, ordenada y proyecciones}
+
+En $P(x,y)$, la primera coordenada $x$ se llama \emph{abscisa} y representa
+el desplazamiento horizontal desde el origen. La segunda coordenada $y$ se
+llama \emph{ordenada} y representa el desplazamiento vertical. Sus
+proyecciones sobre los ejes son
+\[
+P_x=(x,0),\qquad P_y=(0,y).
+\]
+Por ello, la distancia de $P$ al eje $x$ es $|y|$ y su distancia al eje $y$
+es $|x|$.
+
+\begin{example}{Proyecciones y distancia a los ejes}{proyecciones}
+Para $P(-4,3)$, las proyecciones son $(-4,0)$ y $(0,3)$. El punto está a
+$3$ unidades del eje $x$ y a $4$ unidades del eje $y$.
+\end{example}
+
+\subsection{Simetrías elementales}
+
+Cambiar el signo de una coordenada produce una reflexión:
+\[
+\begin{array}{c|c}
+\text{Simetría respecto de} & P(x,y)\text{ se transforma en}\\ \hline
+\text{eje }x & (x,-y)\\
+\text{eje }y & (-x,y)\\
+\text{origen} & (-x,-y)
+\end{array}
+\]
+
+\begin{example}{Puntos simétricos}{simetria}
+Si $A(3,-2)$, sus simétricos respecto del eje $x$, del eje $y$ y del origen
+son, respectivamente, $(3,2)$, $(-3,-2)$ y $(-3,2)$.
+\end{example}
 
 \begin{example}{Ubicación de puntos}{ubicar}
 Ubica $A(3,2)$, $B(-2,3)$, $C(-3,-2)$ y $D(2,-3)$.
@@ -45,6 +89,15 @@ Los puntos están, respectivamente, en los cuadrantes I, II, III y IV.
 \begin{exercise}{Coordenadas y cuadrantes}{cuadrantes}
 Indica el cuadrante o eje al que pertenece cada punto:
 $P(-5,2)$, $Q(0,-4)$, $R(3,-1)$, $S(-2,-6)$ y $T(4,0)$.
+\end{exercise}
+
+\begin{exercise}{Proyecciones y simetrías}{practica-simetria}
+\begin{enumerate}[label=\alph*)]
+  \item Obtén las proyecciones de $A(-5,-2)$ sobre ambos ejes.
+  \item ¿A qué distancia está $B(7,-4)$ de cada eje?
+  \item Escribe los tres puntos simétricos de $C(-2,6)$.
+  \item Encuentra los puntos del eje $y$ que están a $5$ unidades del origen.
+\end{enumerate}
 \end{exercise}
 
 \section{Distancia entre dos puntos}
@@ -71,6 +124,26 @@ d^2=(\Delta x)^2+(\Delta y)^2.
 \]
 \end{formula}
 
+Esta expresión también incluye los segmentos horizontales y verticales. Si
+$y_1=y_2$, se reduce a $d=|x_2-x_1|$; si $x_1=x_2$, se reduce a
+$d=|y_2-y_1|$.
+
+\begin{center}
+\begin{tikzpicture}[scale=.78]
+  \draw[-Latex] (-1,0)--(7,0) node[right] {$x$};
+  \draw[-Latex] (0,-1)--(0,5) node[above] {$y$};
+  \coordinate (A) at (1,1);
+  \coordinate (B) at (6,4);
+  \coordinate (C) at (6,1);
+  \draw[very thick,GArosa] (A)--(B) node[midway,above left] {$d$};
+  \draw[dashed,GAazul] (A)--(C) node[midway,below] {$|x_2-x_1|$};
+  \draw[dashed,GAazul] (C)--(B) node[midway,right] {$|y_2-y_1|$};
+  \fill[GArosa] (A) circle (2pt) node[below left] {$P_1$};
+  \fill[GArosa] (B) circle (2pt) node[above right] {$P_2$};
+  \draw (5.72,1) rectangle (6,1.28);
+\end{tikzpicture}
+\end{center}
+
 \begin{example}{Cálculo de una distancia}{distancia}
 Calcula la distancia entre $A(-2,1)$ y $B(4,5)$.
 \begin{solution}
@@ -79,6 +152,19 @@ d=\sqrt{(4-(-2))^2+(5-1)^2}
  =\sqrt{6^2+4^2}=\sqrt{52}=2\sqrt{13}.
 \]
 La distancia es $2\sqrt{13}\approx 7.21$ unidades.
+\end{solution}
+\end{example}
+
+\begin{example}{Punto equidistante}{equidistante}
+Determina si $P(2,1)$ está a la misma distancia de $A(-1,5)$ y $B(6,4)$.
+\begin{solution}
+Es suficiente comparar los cuadrados de las distancias:
+\[
+PA^2=(2+1)^2+(1-5)^2=25,
+\qquad
+PB^2=(2-6)^2+(1-4)^2=25.
+\]
+Por tanto, $PA=PB=5$ y $P$ es equidistante de $A$ y $B$.
 \end{solution}
 \end{example}
 
@@ -94,6 +180,7 @@ Calcula la distancia entre cada pareja.
   \item $C(-3,4)$ y $D(2,-8)$.
   \item $E(-4,-1)$ y $F(-4,6)$.
   \item $G(2,-3)$ y el origen.
+  \item $H(a,b)$ y el origen; expresa el resultado en términos de $a$ y $b$.
 \end{enumerate}
 \end{exercise}
 
@@ -101,6 +188,10 @@ Calcula la distancia entre cada pareja.
 
 El punto medio se obtiene promediando por separado las coordenadas de los
 extremos.
+
+La razón es geométrica: la coordenada $x$ debe quedar a la mitad entre $x_1$
+y $x_2$, y lo mismo debe ocurrir con $y$. En una recta numérica, el número que
+está a la mitad entre dos valores es su promedio aritmético.
 
 \begin{formula}
 Si $A(x_1,y_1)$ y $B(x_2,y_2)$, entonces
@@ -130,11 +221,26 @@ Por tanto, $B(7,-1)$.
 \end{solution}
 \end{example}
 
+\begin{example}{Centro de un rectángulo}{centro-rectangulo}
+Dos vértices opuestos de un rectángulo son $A(-3,-1)$ y $C(5,7)$. Encuentra
+el centro del rectángulo.
+\begin{solution}
+Las diagonales de un rectángulo se bisecan, así que su centro es el punto medio
+de $AC$:
+\[
+M=\left(\frac{-3+5}{2},\frac{-1+7}{2}\right)=(1,3).
+\]
+\end{solution}
+\end{example}
+
 \begin{exercise}{Puntos medios}{practica-medio}
 \begin{enumerate}[label=\alph*)]
   \item Halla el punto medio de $A(2,-3)$ y $B(8,5)$.
   \item Halla el punto medio de $C(-7,4)$ y $D(3,-6)$.
   \item Si $M(-2,3)$ es el punto medio de $A(4,1)$ y $B$, determina $B$.
+  \item Los extremos de un diámetro son $P(-6,2)$ y $Q(4,8)$. Obtén el centro.
+  \item Un extremo es $A(a,b)$ y el punto medio es el origen. Expresa el otro
+  extremo en términos de $a$ y $b$.
 \end{enumerate}
 \end{exercise}
 
@@ -145,6 +251,13 @@ Sea $P$ un punto que divide internamente el segmento $AB$ en la razón
 AP:PB=m:n.
 \]
 Entonces $P$ está más cerca del extremo asociado con el peso menor.
+
+También puede recorrerse una fracción $\frac{m}{m+n}$ del desplazamiento
+total de $A$ a $B$:
+\[
+P=A+\frac{m}{m+n}(B-A).
+\]
+Al desarrollar cada coordenada se obtiene la fórmula de división interna.
 
 \begin{formula}
 Para $A(x_1,y_1)$ y $B(x_2,y_2)$,
@@ -171,11 +284,27 @@ Como $AP$ es dos veces $PB$, $P$ queda más cerca de $B$.
 \end{solution}
 \end{example}
 
+\begin{example}{Punto situado a una fracción del recorrido}{fraccion}
+Encuentra el punto que está a tres quintas partes del recorrido de
+$A(-2,4)$ a $B(8,-6)$.
+\begin{solution}
+El desplazamiento total es $B-A=(10,-10)$. Entonces
+\[
+P=A+\frac35(B-A)=(-2,4)+\frac35(10,-10)=(4,-2).
+\]
+La razón correspondiente es $AP:PB=3:2$.
+\end{solution}
+\end{example}
+
 \begin{exercise}{División de segmentos}{practica-division}
 \begin{enumerate}[label=\alph*)]
   \item Divide el segmento de $A(-2,1)$ a $B(7,4)$ en razón $1:2$.
   \item Divide el segmento de $C(3,-5)$ a $D(-7,5)$ en razón $3:2$.
   \item Comprueba con la fórmula que la razón $1:1$ produce el punto medio.
+  \item Encuentra el punto situado a un cuarto del recorrido de $A(2,6)$ a
+  $B(10,-2)$.
+  \item El punto $P(4,3)$ divide a $AB$ en razón $1:2$ y $A(0,1)$. Determina
+  el extremo $B$.
 \end{enumerate}
 \end{exercise}
 
@@ -185,6 +314,10 @@ Como $AP$ es dos veces $PB$, $P$ queda más cerca de $B$.
 
 Para hallar un perímetro se calcula la longitud de cada lado y se suman los
 resultados. Comparar las longitudes permite clasificar un triángulo.
+
+Conviene comparar primero los cuadrados de las longitudes: se evitan raíces y
+los cálculos son más cortos. Si el mayor lado satisface $c^2=a^2+b^2$, el
+triángulo es rectángulo.
 
 \begin{example}{Triángulo en el plano}{triangulo}
 Sean $A(0,0)$, $B(4,0)$ y $C(0,3)$.
@@ -200,6 +333,19 @@ así que el triángulo es rectángulo.
 \end{solution}
 \end{example}
 
+\begin{example}{Clasificación mediante distancias}{clasificacion}
+Clasifica el triángulo $A(-1,0)$, $B(3,2)$ y $C(1,6)$ por sus lados.
+\begin{solution}
+\[
+AB^2=4^2+2^2=20,\qquad
+BC^2=(-2)^2+4^2=20,\qquad
+CA^2=(-2)^2+(-6)^2=40.
+\]
+Tiene dos lados iguales, así que es isósceles. Además,
+$AB^2+BC^2=CA^2$; también es rectángulo.
+\end{solution}
+\end{example}
+
 \subsection{Área de un triángulo}
 
 Para $A(x_1,y_1)$, $B(x_2,y_2)$ y $C(x_3,y_3)$:
@@ -211,6 +357,9 @@ x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)
 \]
 \end{formula}
 
+El valor absoluto garantiza un área no negativa. Si la expresión dentro del
+valor absoluto es cero, los tres puntos son colineales.
+
 \begin{example}{Área mediante coordenadas}{area}
 Calcula el área del triángulo $A(1,1)$, $B(5,1)$ y $C(3,4)$.
 \begin{solution}
@@ -219,6 +368,17 @@ Calcula el área del triángulo $A(1,1)$, $B(5,1)$ y $C(3,4)$.
 =\frac12|-3+15|=6.
 \]
 El área es $6$ unidades cuadradas.
+\end{solution}
+\end{example}
+
+\begin{example}{Comprobación de colinealidad}{colinealidad}
+Determina si $A(-1,2)$, $B(2,4)$ y $C(5,6)$ están alineados.
+\begin{solution}
+\[
+\mathcal A=\frac12|-1(4-6)+2(6-2)+5(2-4)|
+=\frac12|2+8-10|=0.
+\]
+Como el área del triángulo es cero, los puntos son colineales.
 \end{solution}
 \end{example}
 
@@ -233,6 +393,11 @@ El área es $6$ unidades cuadradas.
   \item Divide el segmento de $A(0,0)$ a $B(12,9)$ en la razón $2:1$.
   \item Verifica si $A(-1,1)$, $B(3,1)$ y $C(1,1+2\sqrt3)$ forman un
   triángulo equilátero.
+  \item Halla los simétricos de $P(-4,5)$ respecto de los ejes y del origen.
+  \item Determina si $Q(1,-2)$ es equidistante de $A(-2,2)$ y $B(4,2)$.
+  \item Comprueba si $A(-3,-1)$, $B(0,1)$ y $C(6,5)$ son colineales.
+  \item Encuentra el centro del cuadrilátero si dos vértices opuestos son
+  $(-8,3)$ y $(4,-5)$.
 \end{enumerate}
 \end{exercise}
 
@@ -248,12 +413,19 @@ El área es $6$ unidades cuadradas.
   $(1,6)$.
   \item Demuestra mediante distancias que los puntos $A(0,0)$, $B(6,2)$,
   $C(4,8)$ y $D(-2,6)$ forman un cuadrado.
+  \item Una antena debe colocarse a igual distancia de $A(-4,0)$ y $B(6,0)$
+  sobre el eje $x$. Determina su posición y justifica el resultado.
+  \item Los extremos de una diagonal de un paralelogramo son $A(-2,7)$ y
+  $C(8,-1)$. Si otro vértice es $B(5,6)$, determina el cuarto vértice $D$.
+  \item Encuentra el valor de $k$ para que los puntos $(1,2)$, $(3,5)$ y
+  $(5,k)$ sean colineales.
 \end{enumerate}
 \end{problem}
 
 \begin{hints}
 En el último problema compara los cuatro lados y las dos diagonales. Un
 cuadrado tiene cuatro lados iguales y diagonales iguales.
+En un paralelogramo, las diagonales tienen el mismo punto medio.
 \end{hints}
 
 \enlargethispage{5\baselineskip}
@@ -271,3 +443,22 @@ P_{m:n}&=\left(\frac{nx_1+mx_2}{m+n},
 \end{aligned}
 \]
 \end{properties}
+
+\section*{Comprobación rápida}
+\addcontentsline{toc}{section}{Comprobación rápida}
+
+Resuelve sin consultar las secciones anteriores.
+
+\begin{enumerate}
+  \item ¿En qué cuadrante está $P(-3,7)$ y cuáles son sus proyecciones?
+  \item Calcula la distancia del origen al punto $Q(-5,12)$.
+  \item Halla el punto medio de $A(-4,6)$ y $B(8,-2)$.
+  \item Encuentra el punto situado a dos terceras partes del recorrido de
+  $C(0,0)$ a $D(9,6)$.
+  \item Decide si $E(1,1)$, $F(4,3)$ y $G(7,5)$ son colineales.
+\end{enumerate}
+
+\begin{hints}[title={Resultados}]
+II; $(-3,0)$ y $(0,7)$; \quad $13$; \quad $(2,2)$; \quad $(6,4)$;
+\quad sí, el área es cero.
+\end{hints}
