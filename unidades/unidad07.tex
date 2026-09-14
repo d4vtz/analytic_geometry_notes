@@ -1,0 +1,271 @@
+\chapter{Ecuación general de segundo grado}
+
+\begin{center}\begin{minipage}{.88\textwidth}\small\sffamily
+\textbf{Propósito.} Clasificar una cónica a partir de su ecuación general y
+reducirla a forma ordinaria mediante traslación y, cuando sea necesario,
+rotación de ejes.
+\end{minipage}\end{center}
+
+\section{La ecuación general}
+
+\begin{definition}{Ecuación de segundo grado}{ecuacion-segundo-grado}
+La expresión más general de segundo grado en $x$ y $y$ es
+\[
+Ax^2+Bxy+Cy^2+Dx+Ey+F=0,
+\]
+donde al menos uno de $A$, $B$ o $C$ es distinto de cero.
+\end{definition}
+
+Su gráfica puede ser una circunferencia, parábola, elipse, hipérbola o un caso
+degenerado, como un punto, dos rectas, una recta o el conjunto vacío.
+
+\section{Clasificación mediante el discriminante}
+
+\begin{formula}[title={Discriminante de una cónica}]
+\[
+\Delta=B^2-4AC.
+\]
+\[
+\begin{array}{ccl}
+\Delta<0 &\Rightarrow& \text{elipse o circunferencia},\\
+\Delta=0 &\Rightarrow& \text{parábola},\\
+\Delta>0 &\Rightarrow& \text{hipérbola}.
+\end{array}
+\]
+\end{formula}
+
+Si $\Delta<0$ y además $A=C$ y $B=0$, la cónica puede ser una
+circunferencia. El discriminante identifica la familia, pero todavía debe
+revisarse si la gráfica es real o degenerada.
+
+\begin{example}{Clasificación inmediata}{clasificar-conica}
+Clasifica $3x^2+4xy+2y^2-8x+5=0$.
+\begin{solution}
+\textbf{Paso 1.} Identificamos $A=3$, $B=4$ y $C=2$.
+
+\textbf{Paso 2.} Calculamos
+\[
+\Delta=4^2-4(3)(2)=16-24=-8.
+\]
+\textbf{Paso 3.} Como $\Delta<0$, pertenece a la familia de las elipses. No
+es circunferencia porque $A\neq C$ y aparece el término $xy$.
+\end{solution}
+\end{example}
+
+\section{Traslación de ejes}
+
+Una traslación mueve el origen sin girar los ejes. Si el nuevo origen es
+$(h,k)$, se utiliza
+\[
+x=X+h,\qquad y=Y+k.
+\]
+La traslación elimina términos lineales cuando se elige adecuadamente $(h,k)$.
+
+\begin{example}{Traslación de una circunferencia}{traslacion-circulo}
+Reduce $x^2+y^2-6x+4y-12=0$ trasladando el origen.
+\begin{solution}
+\textbf{Paso 1.} El centro es $(3,-2)$; tomamos $x=X+3$, $y=Y-2$.
+
+\textbf{Paso 2.} Sustituimos:
+\[
+(X+3)^2+(Y-2)^2-6(X+3)+4(Y-2)-12=0.
+\]
+\textbf{Paso 3.} Simplificamos:
+\[
+X^2+Y^2=25.
+\]
+En el sistema trasladado la circunferencia está centrada en el origen.
+\end{solution}
+\end{example}
+
+\subsection{Centro de una cónica central}
+
+Cuando $B=0$ y $A,C\neq0$, el centro puede encontrarse completando cuadrados
+o anulando los términos lineales:
+\[
+h=-\frac{D}{2A},\qquad k=-\frac{E}{2C}.
+\]
+
+\begin{example}{Reducción de una elipse}{reducir-elipse}
+Reduce $4x^2+9y^2-16x+54y+61=0$.
+\begin{solution}
+\textbf{Paso 1.} Hallamos el centro:
+\[
+h=-\frac{-16}{2(4)}=2,
+\qquad
+k=-\frac{54}{2(9)}=-3.
+\]
+\textbf{Paso 2.} Tomamos $x=X+2$, $y=Y-3$.
+
+\textbf{Paso 3.} Al sustituir y simplificar:
+\[
+4X^2+9Y^2=36.
+\]
+\textbf{Paso 4.} Normalizamos:
+\[
+\frac{X^2}{9}+\frac{Y^2}{4}=1.
+\]
+Es una elipse horizontal de centro $(2,-3)$.
+\end{solution}
+\end{example}
+
+\section{Rotación de ejes}
+
+El término mixto $Bxy$ indica, en general, que los ejes de la cónica están
+girados respecto de los ejes cartesianos. Usamos
+\[
+x=X\cos\theta-Y\sin\theta,
+\qquad
+y=X\sin\theta+Y\cos\theta.
+\]
+
+\begin{formula}[title={Ángulo que elimina el término mixto}]
+Si $A\neq C$,
+\[
+\tan(2\theta)=\frac{B}{A-C}.
+\]
+Si $A=C$ y $B\neq0$, puede tomarse $\theta=45^\circ$.
+\end{formula}
+
+\begin{intuition}
+La rotación no cambia la figura: solamente coloca los nuevos ejes en las
+direcciones naturales de la cónica. Por ello el discriminante
+$B^2-4AC$ conserva su signo.
+\end{intuition}
+
+\begin{example}{Rotación de una hipérbola}{rotacion-hiperbola}
+Identifica la cónica $xy=8$ mediante una rotación de $45^\circ$.
+\begin{solution}
+\textbf{Paso 1.} Usamos
+\[
+x=\frac{X-Y}{\sqrt2},
+\qquad
+y=\frac{X+Y}{\sqrt2}.
+\]
+\textbf{Paso 2.} Multiplicamos:
+\[
+xy=\frac{(X-Y)(X+Y)}{2}=\frac{X^2-Y^2}{2}.
+\]
+\textbf{Paso 3.} Sustituimos en $xy=8$:
+\[
+X^2-Y^2=16,
+\qquad
+\frac{X^2}{16}-\frac{Y^2}{16}=1.
+\]
+Es una hipérbola equilátera girada $45^\circ$.
+\end{solution}
+\end{example}
+
+\begin{example}{Rotación de una elipse}{rotacion-elipse}
+Clasifica y reduce $5x^2+6xy+5y^2=32$.
+\begin{solution}
+\textbf{Paso 1.} $A=C=5$ y $B=6$, por lo que tomamos $\theta=45^\circ$.
+
+\textbf{Paso 2.} Sustituimos
+$x=(X-Y)/\sqrt2$ y $y=(X+Y)/\sqrt2$.
+
+\textbf{Paso 3.} Simplificamos:
+\[
+8X^2+2Y^2=32.
+\]
+\textbf{Paso 4.} Normalizamos:
+\[
+\frac{X^2}{4}+\frac{Y^2}{16}=1.
+\]
+Es una elipse con semiejes $2$ y $4$, girada $45^\circ$.
+\end{solution}
+\end{example}
+
+\section{Casos degenerados}
+
+Antes de concluir que existe una cónica real, debe analizarse la forma
+reducida:
+\[
+\begin{array}{rcll}
+x^2+y^2&=&0 & \text{un punto},\\
+x^2+y^2&=&-1 & \text{sin puntos reales},\\
+x^2-y^2&=&0 & \text{dos rectas},\\
+x^2&=&0 & \text{una recta doble}.
+\end{array}
+\]
+
+\begin{example}{Detección de un caso degenerado}{degenerada}
+Clasifica $x^2-y^2-2x-2y=0$.
+\begin{solution}
+\textbf{Paso 1.} Completamos cuadrados:
+\[
+(x-1)^2-(y+1)^2=0.
+\]
+\textbf{Paso 2.} Factorizamos diferencia de cuadrados:
+\[
+[(x-1)-(y+1)][(x-1)+(y+1)]=0.
+\]
+\textbf{Paso 3.} La gráfica son las rectas
+\[
+x-y-2=0,
+\qquad
+x+y=0.
+\]
+Es una hipérbola degenerada.
+\end{solution}
+\end{example}
+
+\section{Procedimiento general}
+
+\begin{algorithm}{Análisis de una ecuación cuadrática}{alg-conica-general}
+\begin{enumerate}
+  \item Identifica $A,B,C,D,E,F$ y calcula $B^2-4AC$.
+  \item Si $B\neq0$, rota los ejes para eliminar el término $XY$.
+  \item Agrupa términos y completa cuadrados.
+  \item Traslada el origen al centro o vértice de la cónica.
+  \item Normaliza la ecuación y reconoce su forma ordinaria.
+  \item Comprueba si es real o degenerada y determina sus elementos.
+\end{enumerate}
+\end{algorithm}
+
+\section{Ejercicios y problemas}
+
+\begin{exercise}{Clasificación y reducción}{ej-conica-general}
+\begin{enumerate}
+  \item Clasifica $4x^2+9y^2-36=0$ mediante el discriminante.
+  \item Clasifica $y^2-8x+4y+12=0$ y redúcela a forma ordinaria.
+  \item Reduce $9x^2-16y^2-54x-64y-127=0$.
+  \item Determina si $x^2+y^2-4x+6y+20=0$ tiene puntos reales.
+  \item Clasifica $2x^2+5xy+2y^2-1=0$.
+  \item Calcula el ángulo que elimina el término mixto de
+  $3x^2+4xy-3y^2=10$.
+  \item Rota $x^2+2xy+y^2=8$ y determina si es degenerada.
+\end{enumerate}
+\end{exercise}
+
+\begin{problem}{Síntesis de cónicas}{prob-conica-general}
+\begin{enumerate}
+  \item Reduce, clasifica y obtiene los elementos principales de
+  $4x^2+9y^2-8x+36y+4=0$.
+  \item Reduce, clasifica y obtiene las asíntotas de
+  $4x^2-9y^2-8x-36y-68=0$.
+  \item Demuestra mediante una rotación que $xy=8$ tiene asíntotas
+  perpendiculares.
+  \item Encuentra una ecuación general de una cónica girada que, en los ejes
+  $X,Y$, tiene ecuación $X^2/9+Y^2/4=1$ y $\theta=45^\circ$.
+\end{enumerate}
+\end{problem}
+
+\section*{Resumen}\addcontentsline{toc}{section}{Resumen}
+\begin{properties}
+\[
+Ax^2+Bxy+Cy^2+Dx+Ey+F=0,
+\qquad
+\Delta=B^2-4AC.
+\]
+\[
+\Delta<0:\text{ elipse},\qquad
+\Delta=0:\text{ parábola},\qquad
+\Delta>0:\text{ hipérbola}.
+\]
+\[
+x=X+h,\quad y=Y+k,
+\qquad
+\tan(2\theta)=\frac{B}{A-C}.
+\]
+\end{properties}
