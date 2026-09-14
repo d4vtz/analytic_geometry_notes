@@ -1,0 +1,39 @@
+name: Compilar notas
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.tex"
+      - "**.sty"
+      - ".github/workflows/compilar.yml"
+  pull_request:
+    paths:
+      - "**.tex"
+      - "**.sty"
+      - ".github/workflows/compilar.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Compilar con XeLaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          latexmk_use_xelatex: true
+          args: -interaction=nonstopmode -halt-on-error -file-line-error
+
+      - name: Guardar PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: geometria-analitica
+          path: main.pdf
+          if-no-files-found: error
