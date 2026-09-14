@@ -1,0 +1,202 @@
+\chapter{La circunferencia}
+
+\begin{center}\begin{minipage}{.88\textwidth}\small\sffamily
+\textbf{Propósito.} Modelar circunferencias a partir de su centro, radio,
+ecuación y relaciones con puntos y rectas.
+\end{minipage}\end{center}
+
+\begin{definition}{Circunferencia}{circunferencia}
+Es el lugar geométrico de los puntos $P(x,y)$ cuya distancia a un punto fijo
+$C(h,k)$, llamado centro, es una constante positiva $r$, llamada radio.
+\end{definition}
+
+De $d(P,C)=r$ se obtiene
+\[
+\sqrt{(x-h)^2+(y-k)^2}=r.
+\]
+Al elevar al cuadrado aparece su ecuación ordinaria.
+
+\begin{formula}[title={Ecuación ordinaria}]
+\[
+(x-h)^2+(y-k)^2=r^2.
+\]
+Centro: $C(h,k)$. Radio: $r$.
+\end{formula}
+
+\begin{example}{Centro y radio}{circulo-elementos}
+Identifica los elementos de $(x+3)^2+(y-2)^2=25$.
+\begin{solution}
+\textbf{Paso 1.} Comparamos con $(x-h)^2+(y-k)^2=r^2$.
+
+\textbf{Paso 2.} Como $x+3=x-(-3)$, se tiene $h=-3$; además, $k=2$.
+
+\textbf{Paso 3.} $r^2=25$, por lo que $r=5$. El centro es $(-3,2)$.
+\end{solution}
+\end{example}
+
+\section{Obtención de la ecuación}
+
+\begin{example}{Centro y un punto}{circulo-punto}
+Obtén la circunferencia con centro $C(2,-1)$ que pasa por $P(5,3)$.
+\begin{solution}
+\textbf{Paso 1.} Calculamos el radio:
+\[
+r=CP=\sqrt{(5-2)^2+(3+1)^2}=5.
+\]
+\textbf{Paso 2.} Sustituimos $h=2$, $k=-1$ y $r=5$:
+\[
+(x-2)^2+(y+1)^2=25.
+\]
+\end{solution}
+\end{example}
+
+\begin{example}{Extremos de un diámetro}{circulo-diametro}
+Los extremos de un diámetro son $A(-4,2)$ y $B(6,8)$. Obtén la ecuación.
+\begin{solution}
+\textbf{Paso 1.} El centro es el punto medio:
+\[
+C=\left(\frac{-4+6}{2},\frac{2+8}{2}\right)=(1,5).
+\]
+\textbf{Paso 2.} El radio es la mitad de $AB$:
+\[
+r=\frac12\sqrt{10^2+6^2}=\sqrt{34}.
+\]
+\textbf{Paso 3.} La ecuación es
+\[
+(x-1)^2+(y-5)^2=34.
+\]
+\end{solution}
+\end{example}
+
+\section{Ecuación general}
+
+Al desarrollar la ecuación ordinaria se obtiene una ecuación sin término
+$xy$ y con los mismos coeficientes para $x^2$ y $y^2$.
+
+\begin{formula}[title={Ecuación general de la circunferencia}]
+\[
+x^2+y^2+Dx+Ey+F=0.
+\]
+Su centro y radio son
+\[
+C\left(-\frac D2,-\frac E2\right),\qquad
+r=\sqrt{\frac{D^2+E^2}{4}-F}.
+\]
+\end{formula}
+
+Para pasar a forma ordinaria se agrupan los términos en $x$ y en $y$ y se
+completan cuadrados usando
+\[
+u^2+bu=\left(u+\frac b2\right)^2-\left(\frac b2\right)^2.
+\]
+
+\begin{example}{Completar cuadrados}{completar-circulo}
+Convierte $x^2+y^2-6x+4y-12=0$ a forma ordinaria.
+\begin{solution}
+\textbf{Paso 1.} Agrupamos y trasladamos la constante:
+\[
+(x^2-6x)+(y^2+4y)=12.
+\]
+\textbf{Paso 2.} Añadimos $9$ y $4$ a ambos lados:
+\[
+(x^2-6x+9)+(y^2+4y+4)=25.
+\]
+\textbf{Paso 3.} Factorizamos:
+\[
+(x-3)^2+(y+2)^2=25.
+\]
+Centro $(3,-2)$ y radio $5$.
+\end{solution}
+\end{example}
+
+\begin{remark}
+Si $r^2>0$ hay una circunferencia real; si $r^2=0$ la gráfica se reduce a un
+punto; si $r^2<0$ no existen puntos reales.
+\end{remark}
+
+\section{Posiciones relativas}
+
+Para comparar un punto $P$ con una circunferencia se calcula $d=CP$:
+\[
+d<r:\text{ interior},\qquad d=r:\text{ sobre ella},\qquad d>r:\text{ exterior}.
+\]
+
+Para una recta se calcula la distancia $d(C,\ell)$ del centro a la recta:
+\[
+d<r:\text{ secante},\qquad d=r:\text{ tangente},\qquad d>r:\text{ exterior}.
+\]
+
+\begin{example}{Recta y circunferencia}{recta-circulo}
+Clasifica la recta $3x+4y-25=0$ respecto de
+$(x-1)^2+(y-2)^2=9$.
+\begin{solution}
+\textbf{Paso 1.} $C(1,2)$ y $r=3$.
+
+\textbf{Paso 2.} Calculamos la distancia a la recta:
+\[
+d=\frac{|3(1)+4(2)-25|}{\sqrt{3^2+4^2}}=\frac{14}{5}=2.8.
+\]
+\textbf{Paso 3.} Como $2.8<3$, la recta es secante.
+\end{solution}
+\end{example}
+
+\section{Circunferencia por tres puntos}
+
+Tres puntos no colineales determinan una circunferencia. Se sustituyen en
+$x^2+y^2+Dx+Ey+F=0$ y se resuelve el sistema para $D,E,F$.
+
+\begin{example}{Circunferencia por tres puntos}{tres-puntos-circulo}
+Obtén la circunferencia que pasa por $(0,0)$, $(4,0)$ y $(0,6)$.
+\begin{solution}
+\textbf{Paso 1.} Con $(0,0)$ se obtiene $F=0$.
+
+\textbf{Paso 2.} Con $(4,0)$: $16+4D=0$, así que $D=-4$.
+
+\textbf{Paso 3.} Con $(0,6)$: $36+6E=0$, así que $E=-6$.
+
+\textbf{Paso 4.} La ecuación general es
+\[
+x^2+y^2-4x-6y=0,
+\]
+y la ordinaria es $(x-2)^2+(y-3)^2=13$.
+\end{solution}
+\end{example}
+
+\section{Ejercicios y problemas}
+
+\begin{exercise}{Circunferencia}{ej-circulo}
+\begin{enumerate}
+  \item Identifica centro y radio de $(x-4)^2+(y+1)^2=36$.
+  \item Obtén la circunferencia con centro $(-2,5)$ y radio $4$.
+  \item Obtén la ecuación si el centro es $(3,1)$ y pasa por $(-1,4)$.
+  \item Convierte $x^2+y^2+8x-10y+16=0$ a forma ordinaria.
+  \item Decide si $P(5,2)$ está dentro, sobre o fuera de $x^2+y^2=25$.
+  \item Clasifica $x+y-7=0$ respecto de $(x-2)^2+(y-1)^2=8$.
+  \item Obtén la circunferencia que pasa por $(1,0)$, $(5,0)$ y $(3,4)$.
+\end{enumerate}
+\end{exercise}
+
+\begin{problem}{Aplicaciones}{prob-circulo}
+\begin{enumerate}
+  \item Una zona de cobertura tiene centro $(2,-3)$ y radio $8$ km. Escribe
+  su ecuación y decide si el punto $(8,1)$ tiene cobertura.
+  \item Determina la ecuación de la circunferencia cuyo diámetro está sobre
+  la recta $y=2$ y tiene extremos en $x=-5$ y $x=7$.
+  \item Encuentra los valores de $k$ para que $(k,4)$ pertenezca a
+  $x^2+y^2-6x-4y-12=0$.
+\end{enumerate}
+\end{problem}
+
+\section*{Resumen}\addcontentsline{toc}{section}{Resumen}
+\begin{properties}
+\[
+(x-h)^2+(y-k)^2=r^2,
+\qquad
+x^2+y^2+Dx+Ey+F=0.
+\]
+\[
+C\left(-\frac D2,-\frac E2\right),
+\qquad
+r=\sqrt{\frac{D^2+E^2}{4}-F}.
+\]
+\end{properties}
