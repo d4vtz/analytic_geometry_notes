@@ -1,0 +1,631 @@
+\chapter{La línea recta}
+
+\begin{center}
+\begin{minipage}{.88\textwidth}
+\small\sffamily
+\textbf{Propósito.} Representar rectas mediante ecuaciones, interpretar sus
+parámetros y resolver problemas de posición, intersección, ángulo y distancia.
+\end{minipage}
+\end{center}
+
+\begin{properties}
+Al terminar la unidad podrás:
+\begin{itemize}
+  \item calcular e interpretar la pendiente y el ángulo de inclinación;
+  \item obtener la ecuación de una recta a partir de distintos datos;
+  \item convertir una ecuación entre sus formas más utilizadas;
+  \item decidir si dos rectas son paralelas, perpendiculares o secantes;
+  \item calcular intersecciones, ángulos y distancias.
+\end{itemize}
+\end{properties}
+
+\section{Pendiente y ángulo de inclinación}
+
+\begin{definition}{Pendiente de una recta}{pendiente}
+Sean $P_1(x_1,y_1)$ y $P_2(x_2,y_2)$ dos puntos distintos de una recta, con
+$x_1\neq x_2$. La pendiente es la razón entre el cambio vertical y el cambio
+horizontal:
+\[
+m=\frac{\Delta y}{\Delta x}.
+\]
+\end{definition}
+
+\begin{formula}[title={Pendiente entre dos puntos}]
+\[
+\boxed{m=\frac{y_2-y_1}{x_2-x_1}},\qquad x_1\neq x_2.
+\]
+\end{formula}
+
+\begin{intuition}
+La pendiente indica cuánto cambia $y$ cuando $x$ aumenta una unidad. Si
+$m=2$, por cada unidad hacia la derecha se suben dos; si $m=-\frac12$, por
+cada dos unidades hacia la derecha se baja una.
+\end{intuition}
+
+\begin{properties}
+\begin{center}
+\begin{tabular}{ccl}
+\toprule
+Pendiente & Comportamiento & Interpretación\\
+\midrule
+$m>0$ & creciente & sube de izquierda a derecha\\
+$m<0$ & decreciente & baja de izquierda a derecha\\
+$m=0$ & horizontal & $y$ permanece constante\\
+no definida & vertical & $x$ permanece constante\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{properties}
+
+\begin{example}{Cálculo e interpretación de la pendiente}{calcular-pendiente}
+Calcula la pendiente de la recta que pasa por $A(-2,1)$ y $B(4,7)$.
+\begin{solution}
+\textbf{Paso 1.} Identificamos $x_1=-2$, $y_1=1$, $x_2=4$ y $y_2=7$.
+
+\textbf{Paso 2.} Calculamos los cambios:
+\[
+\Delta x=4-(-2)=6,\qquad \Delta y=7-1=6.
+\]
+
+\textbf{Paso 3.} Formamos la razón:
+\[
+m=\frac{\Delta y}{\Delta x}=\frac66=1.
+\]
+
+\textbf{Paso 4.} Interpretamos: al avanzar una unidad en $x$, la altura
+aumenta una unidad. La recta es creciente.
+\end{solution}
+\end{example}
+
+\begin{remark}
+Al intercambiar los puntos cambian de signo tanto el numerador como el
+denominador, de modo que la pendiente no cambia.
+\end{remark}
+
+\subsection{Ángulo de inclinación}
+
+El ángulo de inclinación $\theta$ se mide en sentido antihorario desde el eje
+$x$ positivo hasta la recta, con $0^\circ\leq\theta<180^\circ$.
+
+\begin{formula}[title={Relación entre pendiente e inclinación}]
+\[
+\boxed{m=\tan\theta},
+\qquad
+\boxed{\theta=\arctan(m)}.
+\]
+Si $m<0$, se suma $180^\circ$ al valor principal de $\arctan(m)$ para obtener
+un ángulo en el intervalo indicado.
+\end{formula}
+
+\begin{example}{Ángulo de inclinación}{inclinacion}
+Determina el ángulo de inclinación de una recta cuya pendiente es
+$m=-\sqrt3$.
+\begin{solution}
+\textbf{Paso 1.} Calculamos el valor principal:
+\[
+\arctan(-\sqrt3)=-60^\circ.
+\]
+
+\textbf{Paso 2.} Como el ángulo de inclinación debe estar entre $0^\circ$ y
+$180^\circ$, sumamos $180^\circ$:
+\[
+\theta=-60^\circ+180^\circ=120^\circ.
+\]
+\end{solution}
+\end{example}
+
+\begin{exercise}{Pendiente e inclinación}{ej-pendiente}
+\begin{enumerate}[label=\alph*)]
+  \item Calcula la pendiente entre $A(1,3)$ y $B(5,11)$.
+  \item Calcula la pendiente entre $C(-4,6)$ y $D(2,-3)$.
+  \item Determina si la recta por $P(-2,5)$ y $Q(4,5)$ es creciente,
+  decreciente, horizontal o vertical.
+  \item ¿Qué ocurre con la fórmula si los puntos son $R(3,-1)$ y $S(3,8)$?
+  \item Obtén el ángulo de inclinación para $m=1$, $m=\sqrt3$ y $m=-1$.
+\end{enumerate}
+\end{exercise}
+
+\section{Ecuaciones de la recta}
+
+Una ecuación de dos variables representa una recta cuando todos los puntos de
+la recta la satisfacen y todo punto que la satisface pertenece a ella.
+
+\subsection{Forma punto--pendiente}
+
+Si una recta de pendiente $m$ pasa por $P_1(x_1,y_1)$, cualquier otro punto
+$P(x,y)$ de la recta cumple
+\[
+m=\frac{y-y_1}{x-x_1}.
+\]
+Al multiplicar por $x-x_1$ se obtiene la forma siguiente.
+
+\begin{formula}[title={Forma punto--pendiente}]
+\[
+\boxed{y-y_1=m(x-x_1)}.
+\]
+\end{formula}
+
+\begin{example}{Recta con un punto y la pendiente}{punto-pendiente}
+Obtén la ecuación de la recta de pendiente $m=-2$ que pasa por $P(3,5)$.
+\begin{solution}
+\textbf{Paso 1.} Sustituimos $m=-2$, $x_1=3$ y $y_1=5$:
+\[
+y-5=-2(x-3).
+\]
+
+\textbf{Paso 2.} Desarrollamos:
+\[
+y-5=-2x+6.
+\]
+
+\textbf{Paso 3.} Despejamos $y$:
+\[
+\boxed{y=-2x+11}.
+\]
+
+\textbf{Paso 4.} Comprobamos con $P(3,5)$:
+$5=-2(3)+11=5$.
+\end{solution}
+\end{example}
+
+\subsection{Forma pendiente--ordenada al origen}
+
+\begin{formula}[title={Forma pendiente--ordenada}]
+\[
+\boxed{y=mx+b}.
+\]
+$m$ es la pendiente y $b$ es la ordenada al origen, es decir, la coordenada
+$y$ del punto donde la recta corta el eje vertical.
+\end{formula}
+
+\begin{example}{Interpretación de $m$ y $b$}{pendiente-ordenada}
+Analiza y grafica la recta $y=\frac12x-2$.
+\begin{solution}
+\textbf{Paso 1.} Identificamos $m=\frac12$ y $b=-2$.
+
+\textbf{Paso 2.} Marcamos el corte con el eje $y$: $(0,-2)$.
+
+\textbf{Paso 3.} Interpretamos $m=\frac12$: desde $(0,-2)$ avanzamos dos
+unidades a la derecha y subimos una. Así obtenemos $(2,-1)$.
+
+\textbf{Paso 4.} Trazamos la recta que pasa por ambos puntos.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[ga axis,width=8cm,height=5.7cm,xmin=-4,xmax=6,ymin=-5,ymax=3]
+\addplot[domain=-4:6,samples=2,very thick,GArosa]{x/2-2};
+\addplot[only marks,mark=*,GAazul] coordinates {(0,-2) (2,-1)};
+\node[below left] at (axis cs:0,-2) {$(0,-2)$};
+\node[above left] at (axis cs:2,-1) {$(2,-1)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{example}
+
+\subsection{Recta determinada por dos puntos}
+
+Dos puntos distintos determinan una única recta. Primero se calcula la
+pendiente y después se utiliza cualquiera de ellos en la forma
+punto--pendiente.
+
+\begin{formula}[title={Forma de dos puntos}]
+\[
+\boxed{y-y_1=\frac{y_2-y_1}{x_2-x_1}(x-x_1)},
+\qquad x_1\neq x_2.
+\]
+\end{formula}
+
+\begin{example}{Ecuación a partir de dos puntos}{dos-puntos}
+Obtén la ecuación de la recta que pasa por $A(-1,4)$ y $B(3,-2)$.
+\begin{solution}
+\textbf{Paso 1.} Calculamos la pendiente:
+\[
+m=\frac{-2-4}{3-(-1)}=\frac{-6}{4}=-\frac32.
+\]
+
+\textbf{Paso 2.} Usamos el punto $A(-1,4)$:
+\[
+y-4=-\frac32(x+1).
+\]
+
+\textbf{Paso 3.} Despejamos $y$:
+\[
+y=-\frac32x+\frac52.
+\]
+
+\textbf{Paso 4.} Comprobamos con $B(3,-2)$:
+$-\frac32(3)+\frac52=-2$.
+\end{solution}
+\end{example}
+
+\subsection{Rectas horizontales y verticales}
+
+\begin{properties}
+\[
+\boxed{y=k}\quad\text{es horizontal},
+\qquad
+\boxed{x=h}\quad\text{es vertical}.
+\]
+La primera pasa por todos los puntos $(x,k)$; la segunda, por todos los puntos
+$(h,y)$. Una recta vertical no puede escribirse como $y=mx+b$ porque su
+pendiente no está definida.
+\end{properties}
+
+\begin{exercise}{Construcción de ecuaciones}{ej-ecuaciones}
+Obtén la ecuación de cada recta en forma pendiente--ordenada cuando sea
+posible.
+\begin{enumerate}[label=\alph*)]
+  \item Pendiente $3$ y punto $(2,-1)$.
+  \item Pendiente $-\frac12$ y punto $(-4,5)$.
+  \item Pasa por $(1,2)$ y $(5,10)$.
+  \item Pasa por $(-3,4)$ y $(2,4)$.
+  \item Pasa por $(6,-2)$ y $(6,7)$.
+\end{enumerate}
+\end{exercise}
+
+\section{Formas general y simétrica}
+
+\subsection{Forma general}
+
+\begin{definition}{Ecuación general de una recta}{forma-general}
+La ecuación
+\[
+\boxed{Ax+By+C=0},
+\]
+con $A$ y $B$ no ambos nulos, representa una recta.
+\end{definition}
+
+Si $B\neq0$, puede despejarse $y$:
+\[
+y=-\frac ABx-\frac CB.
+\]
+Por tanto, su pendiente es $m=-\frac AB$ y su ordenada al origen es
+$b=-\frac CB$.
+
+\begin{example}{Conversión entre formas}{conversion}
+Convierte $3x-2y-8=0$ a la forma pendiente--ordenada e identifica sus
+parámetros.
+\begin{solution}
+\textbf{Paso 1.} Aislamos el término que contiene $y$:
+\[
+-2y=-3x+8.
+\]
+
+\textbf{Paso 2.} Dividimos entre $-2$:
+\[
+y=\frac32x-4.
+\]
+
+\textbf{Paso 3.} Leemos los parámetros: $m=\frac32$ y $b=-4$.
+\end{solution}
+\end{example}
+
+\subsection{Intersecciones con los ejes y forma simétrica}
+
+Para hallar el corte con el eje $x$ se hace $y=0$; para hallar el corte con el
+eje $y$ se hace $x=0$.
+
+Si la recta corta los ejes en $(a,0)$ y $(0,b)$, con $a,b\neq0$, puede
+escribirse así:
+
+\begin{formula}[title={Forma simétrica o de interceptos}]
+\[
+\boxed{\frac xa+\frac yb=1}.
+\]
+\end{formula}
+
+\begin{example}{Interceptos y forma simétrica}{interceptos}
+Escribe $2x+3y-12=0$ en forma simétrica.
+\begin{solution}
+\textbf{Paso 1.} Corte con $x$: hacemos $y=0$.
+\[
+2x-12=0\Rightarrow x=6.
+\]
+
+\textbf{Paso 2.} Corte con $y$: hacemos $x=0$.
+\[
+3y-12=0\Rightarrow y=4.
+\]
+
+\textbf{Paso 3.} Sustituimos $a=6$ y $b=4$:
+\[
+\boxed{\frac x6+\frac y4=1}.
+\]
+\end{solution}
+\end{example}
+
+\begin{exercise}{Formas de la recta}{ej-formas}
+\begin{enumerate}[label=\alph*)]
+  \item Convierte $y=-3x+7$ a forma general.
+  \item Despeja $y$ en $4x+5y-20=0$ e identifica $m$ y $b$.
+  \item Obtén los interceptos de $3x-2y-6=0$.
+  \item Escribe en forma general la recta $\frac{x}{5}+\frac{y}{-2}=1$.
+  \item Explica por qué $x=4$ no tiene forma pendiente--ordenada.
+\end{enumerate}
+\end{exercise}
+
+\section{Paralelismo y perpendicularidad}
+
+\begin{properties}
+Sean dos rectas no verticales de pendientes $m_1$ y $m_2$:
+\[
+\boxed{m_1=m_2}\quad\Longrightarrow\quad\text{rectas paralelas},
+\]
+\[
+\boxed{m_1m_2=-1}\quad\Longrightarrow\quad\text{rectas perpendiculares}.
+\]
+Las rectas verticales son paralelas entre sí y perpendiculares a las
+horizontales.
+\end{properties}
+
+\begin{example}{Recta paralela por un punto}{paralela}
+Obtén la recta que pasa por $P(2,-3)$ y es paralela a $3x-y+5=0$.
+\begin{solution}
+\textbf{Paso 1.} Despejamos $y$ en la recta dada:
+\[
+y=3x+5.
+\]
+Su pendiente es $m=3$.
+
+\textbf{Paso 2.} La recta buscada debe tener la misma pendiente. Usamos
+$P(2,-3)$:
+\[
+y+3=3(x-2).
+\]
+
+\textbf{Paso 3.} Simplificamos:
+\[
+\boxed{y=3x-9}.
+\]
+\end{solution}
+\end{example}
+
+\begin{example}{Recta perpendicular por un punto}{perpendicular}
+Obtén la recta que pasa por $Q(-1,4)$ y es perpendicular a
+$2x+5y-10=0$.
+\begin{solution}
+\textbf{Paso 1.} Identificamos la pendiente de la recta dada:
+\[
+m_1=-\frac AB=-\frac25.
+\]
+
+\textbf{Paso 2.} Buscamos su recíproco negativo:
+\[
+m_2=\frac52,qquad m_1m_2=-1.
+\]
+
+\textbf{Paso 3.} Usamos $Q(-1,4)$:
+\[
+y-4=\frac52(x+1).
+\]
+Esta es la ecuación solicitada; en forma general es
+\[
+\boxed{5x-2y+13=0}.
+\]
+\end{solution}
+\end{example}
+
+\begin{exercise}{Paralelas y perpendiculares}{ej-posicion}
+\begin{enumerate}[label=\alph*)]
+  \item Decide si $y=4x-1$ y $8x-2y+7=0$ son paralelas.
+  \item Decide si $3x+y=2$ y $x-3y=5$ son perpendiculares.
+  \item Obtén la paralela a $2x-3y+6=0$ que pasa por $(3,1)$.
+  \item Obtén la perpendicular a $y=-\frac14x+2$ que pasa por $(-2,5)$.
+  \item Encuentra el valor de $k$ para que $kx+2y-1=0$ sea paralela a
+  $3x-y+4=0$.
+\end{enumerate}
+\end{exercise}
+
+\section{Intersección de dos rectas}
+
+El punto de intersección de dos rectas satisface simultáneamente ambas
+ecuaciones. Por ello se obtiene resolviendo un sistema lineal de dos
+ecuaciones con dos incógnitas.
+
+\begin{example}{Intersección mediante sustitución}{interseccion}
+Encuentra la intersección de
+\[
+r_1:y=2x-1,
+\qquad
+r_2:x+y=8.
+\]
+\begin{solution}
+\textbf{Paso 1.} Sustituimos $y=2x-1$ en la segunda ecuación:
+\[
+x+(2x-1)=8.
+\]
+
+\textbf{Paso 2.} Resolvemos para $x$:
+\[
+3x=9\Rightarrow x=3.
+\]
+
+\textbf{Paso 3.} Sustituimos en cualquiera de las rectas:
+\[
+y=2(3)-1=5.
+\]
+
+\textbf{Paso 4.} Comprobamos: $3+5=8$. La intersección es
+$\boxed{(3,5)}$.
+\end{solution}
+\end{example}
+
+\begin{remark}
+Dos rectas con pendientes diferentes tienen una intersección. Dos rectas
+paralelas distintas no tienen solución común; si sus ecuaciones representan
+la misma recta, tienen infinitas soluciones.
+\end{remark}
+
+\begin{exercise}{Intersecciones}{ej-interseccion}
+Encuentra el punto de intersección o describe el tipo de sistema.
+\begin{enumerate}[label=\alph*)]
+  \item $y=3x-2$ y $y=-x+6$.
+  \item $2x+y=7$ y $x-y=2$.
+  \item $4x-2y=8$ y $2x-y=1$.
+  \item $3x+6y=9$ y $x+2y=3$.
+\end{enumerate}
+\end{exercise}
+
+\section{Ángulo entre dos rectas}
+
+El ángulo menor $\varphi$ entre dos rectas se obtiene a partir de sus
+pendientes. La expresión proviene de la identidad de la tangente de una
+diferencia de ángulos.
+
+\begin{formula}[title={Ángulo entre dos rectas}]
+\[
+\boxed{
+\tan\varphi=\left|\frac{m_2-m_1}{1+m_1m_2}\right|
+},
+\qquad 0^\circ\leq\varphi\leq90^\circ.
+\]
+Si $1+m_1m_2=0$, las rectas son perpendiculares y
+$\varphi=90^\circ$.
+\end{formula}
+
+\begin{example}{Cálculo del ángulo menor}{angulo-rectas}
+Calcula el ángulo entre $r_1:y=2x+1$ y $r_2:y=-\frac13x+4$.
+\begin{solution}
+\textbf{Paso 1.} Identificamos $m_1=2$ y $m_2=-\frac13$.
+
+\textbf{Paso 2.} Sustituimos:
+\[
+\tan\varphi=\left|
+\frac{-\frac13-2}{1+2(-\frac13)}
+\right|
+=\left|\frac{-\frac73}{\frac13}\right|=7.
+\]
+
+\textbf{Paso 3.} Aplicamos la función inversa:
+\[
+\varphi=\arctan(7)\approx81.87^\circ.
+\]
+\end{solution}
+\end{example}
+
+\begin{exercise}{Ángulos}{ej-angulos}
+Calcula el ángulo menor entre cada pareja.
+\begin{enumerate}[label=\alph*)]
+  \item $y=x+1$ y $y=-x+3$.
+  \item $y=\frac12x-4$ y $y=2x+1$.
+  \item $3x-y+2=0$ y $x+2y-5=0$.
+\end{enumerate}
+\end{exercise}
+
+\section{Distancia de un punto a una recta}
+
+La distancia de un punto a una recta es la longitud del segmento
+perpendicular que los une. No es la distancia a cualquier punto elegido sobre
+la recta.
+
+\begin{formula}[title={Distancia de un punto a una recta}]
+Si $P(x_0,y_0)$ y la recta es $Ax+By+C=0$, entonces
+\[
+\boxed{
+d(P,r)=\frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}
+}.
+\]
+\end{formula}
+
+\begin{example}{Distancia punto--recta}{distancia-recta}
+Calcula la distancia de $P(4,-1)$ a la recta $3x-4y-6=0$.
+\begin{solution}
+\textbf{Paso 1.} Identificamos
+$A=3$, $B=-4$, $C=-6$, $x_0=4$ y $y_0=-1$.
+
+\textbf{Paso 2.} Sustituimos en el numerador:
+\[
+|3(4)-4(-1)-6|=|12+4-6|=10.
+\]
+
+\textbf{Paso 3.} Calculamos el denominador:
+\[
+\sqrt{3^2+(-4)^2}=\sqrt{25}=5.
+\]
+
+\textbf{Paso 4.} Dividimos:
+\[
+d(P,r)=\frac{10}{5}=\boxed{2}.
+\]
+\end{solution}
+\end{example}
+
+\begin{exercise}{Distancia punto--recta}{ej-distancia-recta}
+\begin{enumerate}[label=\alph*)]
+  \item Distancia de $(2,3)$ a $4x-3y+5=0$.
+  \item Distancia del origen a $5x+12y-26=0$.
+  \item Encuentra los valores de $k$ para que $(k,1)$ esté a distancia $2$
+  de la recta $x=4$.
+  \item Verifica que un punto que satisface $Ax+By+C=0$ tiene distancia cero
+  a la recta.
+\end{enumerate}
+\end{exercise}
+
+\section{Problemas de unidad}
+
+\begin{problem}{Aplicaciones de la línea recta}{problemas-recta}
+\begin{enumerate}
+  \item La temperatura de un líquido aumenta linealmente. A los $2$ minutos
+  es $18\,{}^\circ\mathrm C$ y a los $8$ minutos es
+  $42\,{}^\circ\mathrm C$. Obtén el modelo $T(t)$ e interpreta su pendiente.
+  \item Una carretera recta pasa por los puntos cartográficos $A(-3,2)$ y
+  $B(5,6)$. Obtén su ecuación general.
+  \item Determina la ecuación de la mediatriz del segmento cuyos extremos son
+  $P(-2,1)$ y $Q(6,5)$.
+  \item Los lados de un triángulo están sobre $x+y=6$, $x=1$ y $y=2$.
+  Obtén sus vértices y su área.
+  \item Encuentra la distancia entre las rectas paralelas
+  $3x-4y+5=0$ y $3x-4y-15=0$.
+  \item Una recta pasa por $(2,-1)$ y forma un ángulo de $45^\circ$ con el
+  eje $x$. Obtén su ecuación.
+  \item Encuentra $k$ para que las rectas $kx+3y-1=0$ y
+  $2x-ky+4=0$ sean perpendiculares.
+\end{enumerate}
+\end{problem}
+
+\begin{hints}
+Para una mediatriz, encuentra primero el punto medio y después una pendiente
+perpendicular. Para la distancia entre rectas paralelas, toma un punto de una
+de ellas y calcula su distancia a la otra.
+\end{hints}
+
+\clearpage
+\section*{Resumen}
+\addcontentsline{toc}{section}{Resumen}
+
+\begin{properties}
+\[
+\begin{aligned}
+m&=\frac{y_2-y_1}{x_2-x_1},
+&m&=\tan\theta,\\[1mm]
+y-y_1&=m(x-x_1),
+&y&=mx+b,\\[1mm]
+Ax+By+C&=0,
+&\frac xa+\frac yb&=1,\\[1mm]
+m_1=m_2&\Longrightarrow r_1\parallel r_2,
+&m_1m_2=-1&\Longrightarrow r_1\perp r_2.
+\end{aligned}
+\]
+\[
+\tan\varphi=\left|\frac{m_2-m_1}{1+m_1m_2}\right|,
+\qquad
+d(P,r)=\frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}.
+\]
+\end{properties}
+
+\section*{Comprobación rápida}
+\addcontentsline{toc}{section}{Comprobación rápida}
+
+\begin{enumerate}
+  \item Calcula la pendiente entre $(-2,3)$ y $(4,-6)$.
+  \item Obtén la recta de pendiente $2$ que pasa por $(1,-4)$.
+  \item Convierte $2x-5y+10=0$ a forma pendiente--ordenada.
+  \item Obtén la perpendicular a $y=-3x+1$ que pasa por el origen.
+  \item Encuentra la intersección de $y=x+2$ y $y=-2x+8$.
+  \item Calcula la distancia de $(1,1)$ a $3x+4y-12=0$.
+\end{enumerate}
+
+\begin{hints}[title={Resultados}]
+$-\frac32$; \quad $y=2x-6$; \quad $y=\frac25x+2$; \quad
+$y=\frac13x$; \quad $(2,4)$; \quad $1$.
+\end{hints}
