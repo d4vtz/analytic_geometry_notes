@@ -1,0 +1,169 @@
+\chapter{La elipse}
+
+\begin{center}\begin{minipage}{.88\textwidth}\small\sffamily
+\textbf{Propósito.} Reconocer la elipse como lugar geométrico y obtener sus
+elementos, ecuaciones y medidas principales.
+\end{minipage}\end{center}
+
+\begin{definition}{Elipse}{elipse}
+Es el lugar geométrico de los puntos $P$ para los cuales la suma de las
+distancias a dos puntos fijos $F_1$ y $F_2$, llamados focos, es constante:
+\[
+PF_1+PF_2=2a.
+\]
+\end{definition}
+
+El centro es el punto medio de los focos. El semieje mayor mide $a$, el
+semieje menor mide $b$ y la distancia del centro a cada foco es $c$.
+
+\begin{formula}[title={Relación fundamental}]
+\[
+c^2=a^2-b^2,\qquad a>b>0.
+\]
+\end{formula}
+
+\section{Ecuaciones ordinarias}
+
+\begin{formula}[title={Elipse horizontal}]
+\[
+\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1.
+\]
+Centro $C(h,k)$; vértices $(h\pm a,k)$; focos $(h\pm c,k)$.
+\end{formula}
+
+\begin{formula}[title={Elipse vertical}]
+\[
+\frac{(x-h)^2}{b^2}+\frac{(y-k)^2}{a^2}=1.
+\]
+Centro $C(h,k)$; vértices $(h,k\pm a)$; focos $(h,k\pm c)$.
+\end{formula}
+
+El denominador mayor indica la dirección del eje mayor. Sus longitudes son
+$2a$ y $2b$.
+
+\begin{example}{Elementos de una elipse horizontal}{elementos-elipse}
+Analiza
+\[
+\frac{(x-2)^2}{25}+\frac{(y+1)^2}{9}=1.
+\]
+\begin{solution}
+\textbf{Paso 1.} $C(2,-1)$, $a^2=25$ y $b^2=9$; así, $a=5$, $b=3$.
+
+\textbf{Paso 2.} El denominador mayor está bajo $x$, por lo que es horizontal.
+
+\textbf{Paso 3.} $c=\sqrt{25-9}=4$.
+
+\textbf{Paso 4.} Vértices: $(-3,-1)$ y $(7,-1)$; focos: $(-2,-1)$ y
+$(6,-1)$; co-vértices: $(2,-4)$ y $(2,2)$.
+\end{solution}
+\end{example}
+
+\section{Excentricidad y lado recto}
+
+\begin{formula}[title={Excentricidad de la elipse}]
+\[
+e=\frac ca,\qquad 0<e<1.
+\]
+\end{formula}
+
+Una excentricidad cercana a cero corresponde a una elipse casi circular; una
+cercana a uno indica una elipse más alargada. La longitud de cada lado recto es
+\[
+L=\frac{2b^2}{a}.
+\]
+
+\begin{example}{Excentricidad y lado recto}{exc-elipse}
+Para $9x^2+25y^2=225$, calcula $e$ y $L$.
+\begin{solution}
+\textbf{Paso 1.} Dividimos entre $225$:
+\[
+\frac{x^2}{25}+\frac{y^2}{9}=1.
+\]
+\textbf{Paso 2.} $a=5$, $b=3$ y $c=4$.
+
+\textbf{Paso 3.} $e=\frac45$ y $L=\frac{2(9)}5=\frac{18}{5}$.
+\end{solution}
+\end{example}
+
+\section{Obtención de la ecuación}
+
+\begin{example}{Ecuación a partir de vértices y focos}{ecuacion-elipse}
+Una elipse tiene centro $(1,2)$, vértices principales $(1,8)$ y $(1,-4)$, y
+focos $(1,6)$ y $(1,-2)$. Obtén su ecuación.
+\begin{solution}
+\textbf{Paso 1.} El eje mayor es vertical. Del centro a un vértice,
+$a=6$; del centro a un foco, $c=4$.
+
+\textbf{Paso 2.} Calculamos
+\[
+b^2=a^2-c^2=36-16=20.
+\]
+\textbf{Paso 3.} Sustituimos:
+\[
+\frac{(x-1)^2}{20}+\frac{(y-2)^2}{36}=1.
+\]
+\end{solution}
+\end{example}
+
+\section{Forma general}
+
+En una elipse no rotada aparecen $x^2$ y $y^2$ con coeficientes del mismo
+signo. Para recuperar la forma ordinaria se completan cuadrados y se normaliza
+el lado derecho a $1$.
+
+\begin{example}{De general a ordinaria}{general-elipse}
+Analiza $4x^2+9y^2-8x+36y+4=0$.
+\begin{solution}
+\textbf{Paso 1.} Agrupamos:
+\[
+4(x^2-2x)+9(y^2+4y)=-4.
+\]
+\textbf{Paso 2.} Completamos cuadrados:
+\[
+4(x-1)^2+9(y+2)^2=36.
+\]
+\textbf{Paso 3.} Dividimos entre $36$:
+\[
+\frac{(x-1)^2}{9}+\frac{(y+2)^2}{4}=1.
+\]
+\textbf{Paso 4.} $C(1,-2)$, $a=3$, $b=2$ y $c=\sqrt5$; es horizontal.
+\end{solution}
+\end{example}
+
+\section{Ejercicios y problemas}
+
+\begin{exercise}{Elipses}{ej-elipse}
+\begin{enumerate}
+  \item Analiza $\frac{x^2}{36}+\frac{y^2}{16}=1$.
+  \item Analiza $\frac{(x+3)^2}{9}+\frac{(y-2)^2}{49}=1$.
+  \item Obtén la ecuación con centro $(0,0)$, vértices $(\pm10,0)$ y focos
+  $(\pm8,0)$.
+  \item Obtén la ecuación con centro $(2,-1)$, eje mayor vertical de longitud
+  $12$ y eje menor de longitud $8$.
+  \item Convierte $9x^2+4y^2-54x+8y+49=0$ a forma ordinaria.
+  \item Calcula excentricidad y lado recto de $\frac{x^2}{64}+\frac{y^2}{28}=1$.
+\end{enumerate}
+\end{exercise}
+
+\begin{problem}{Aplicaciones}{prob-elipse}
+\begin{enumerate}
+  \item Una pista elíptica tiene ejes de $120$ m y $80$ m. Obtén una ecuación
+  centrada en el origen y la posición de sus focos.
+  \item La órbita idealizada de un cuerpo tiene $a=10$ y $e=0.6$. Calcula
+  $b$, $c$ y una ecuación con eje mayor horizontal.
+  \item Un arco es la mitad superior de $\frac{x^2}{25}+\frac{y^2}{9}=1$.
+  Calcula su altura a $x=4$.
+\end{enumerate}
+\end{problem}
+
+\section*{Resumen}\addcontentsline{toc}{section}{Resumen}
+\begin{properties}
+\[
+\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1,
+\qquad c^2=a^2-b^2.
+\]
+\[
+e=\frac ca<1,
+\qquad L=\frac{2b^2}{a}.
+\]
+\end{properties}
