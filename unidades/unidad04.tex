@@ -1,0 +1,191 @@
+\chapter{La parábola}
+
+\begin{center}\begin{minipage}{.88\textwidth}\small\sffamily
+\textbf{Propósito.} Interpretar la parábola como lugar geométrico y obtener
+sus elementos y ecuaciones en orientación horizontal o vertical.
+\end{minipage}\end{center}
+
+\begin{definition}{Parábola}{parabola}
+Es el lugar geométrico de los puntos que están a la misma distancia de un
+punto fijo, llamado foco, y de una recta fija, llamada directriz.
+\end{definition}
+
+El punto medio entre el foco y la directriz sobre el eje de simetría es el
+vértice. La distancia dirigida del vértice al foco se denota por $p$.
+
+\begin{formula}[title={Parábolas con vértice en el origen}]
+\[
+y^2=4px\quad\text{(eje horizontal)},
+\qquad
+x^2=4py\quad\text{(eje vertical)}.
+\]
+\end{formula}
+
+\begin{center}
+\begin{tabular}{ccll}
+\toprule
+Ecuación & Foco & Directriz & Apertura\\
+\midrule
+$y^2=4px$ & $(p,0)$ & $x=-p$ & derecha si $p>0$\\
+$x^2=4py$ & $(0,p)$ & $y=-p$ & arriba si $p>0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Si $p<0$, la apertura se invierte.
+
+\section{Deducción de la ecuación}
+
+Para foco $F(p,0)$ y directriz $x=-p$, un punto $P(x,y)$ cumple
+\[
+PF=\operatorname{dist}(P,\text{directriz}).
+\]
+Así,
+\[
+\sqrt{(x-p)^2+y^2}=|x+p|.
+\]
+Al elevar al cuadrado y simplificar resulta $y^2=4px$.
+
+\begin{example}{Elementos desde la ecuación}{elementos-parabola}
+Determina los elementos de $y^2=12x$.
+\begin{solution}
+\textbf{Paso 1.} Comparamos $4p=12$, por lo que $p=3$.
+
+\textbf{Paso 2.} El vértice es $(0,0)$ y el foco es $(3,0)$.
+
+\textbf{Paso 3.} La directriz es $x=-3$ y el eje es $y=0$.
+
+\textbf{Paso 4.} Como $p>0$, abre hacia la derecha. El lado recto mide
+$|4p|=12$.
+\end{solution}
+\end{example}
+
+\section{Parábolas trasladadas}
+
+\begin{formula}[title={Formas ordinarias}]
+\[
+(y-k)^2=4p(x-h),
+\qquad
+(x-h)^2=4p(y-k).
+\]
+El vértice es $V(h,k)$.
+\end{formula}
+
+Para $(y-k)^2=4p(x-h)$:
+\[
+F(h+p,k),\qquad x=h-p,\qquad y=k.
+\]
+Para $(x-h)^2=4p(y-k)$:
+\[
+F(h,k+p),\qquad y=k-p,\qquad x=h.
+\]
+
+\begin{example}{Parábola horizontal trasladada}{parabola-horizontal}
+Analiza $(y+2)^2=-8(x-1)$.
+\begin{solution}
+\textbf{Paso 1.} $h=1$, $k=-2$ y $4p=-8$, de modo que $p=-2$.
+
+\textbf{Paso 2.} $V(1,-2)$ y $F(h+p,k)=(-1,-2)$.
+
+\textbf{Paso 3.} La directriz es $x=h-p=3$ y el eje es $y=-2$.
+
+\textbf{Paso 4.} Abre hacia la izquierda; su lado recto mide $8$.
+\end{solution}
+\end{example}
+
+\begin{example}{Ecuación a partir de foco y vértice}{ecuacion-parabola}
+Obtén la parábola con vértice $V(2,1)$ y foco $F(2,5)$.
+\begin{solution}
+\textbf{Paso 1.} El foco comparte la coordenada $x$ con el vértice, así que
+el eje es vertical.
+
+\textbf{Paso 2.} $p=5-1=4$; abre hacia arriba.
+
+\textbf{Paso 3.} Sustituimos en $(x-h)^2=4p(y-k)$:
+\[
+(x-2)^2=16(y-1).
+\]
+La directriz es $y=1-4=-3$.
+\end{solution}
+\end{example}
+
+\section{Lado recto}
+
+El lado recto es la cuerda perpendicular al eje que pasa por el foco. Su
+longitud es $|4p|$. Para una parábola horizontal sus extremos son
+\[
+(h+p,k+2p),\qquad(h+p,k-2p),
+\]
+y para una vertical son
+\[
+(h+2p,k+p),\qquad(h-2p,k+p).
+\]
+
+\section{De la forma general a la ordinaria}
+
+Una parábola no rotada tiene solamente uno de los términos cuadráticos. Para
+obtener su forma ordinaria se completa el cuadrado en la variable elevada al
+cuadrado.
+
+\begin{example}{Completar cuadrados}{general-parabola}
+Analiza $x^2-6x-8y+1=0$.
+\begin{solution}
+\textbf{Paso 1.} Agrupamos y trasladamos términos:
+\[
+x^2-6x=8y-1.
+\]
+\textbf{Paso 2.} Sumamos $9$ a ambos lados:
+\[
+(x-3)^2=8y+8=8(y+1).
+\]
+\textbf{Paso 3.} $h=3$, $k=-1$ y $4p=8$, así que $p=2$.
+
+\textbf{Paso 4.} $V(3,-1)$, $F(3,1)$ y directriz $y=-3$.
+\end{solution}
+\end{example}
+
+\section{Aplicaciones}
+
+\begin{example}{Reflector parabólico}{reflector}
+Un reflector tiene $12$ cm de abertura y $3$ cm de profundidad. Coloca el
+vértice en el origen y encuentra la posición del foco.
+\begin{solution}
+\textbf{Paso 1.} Usamos $x^2=4py$. El borde contiene $(6,3)$.
+
+\textbf{Paso 2.} Sustituimos: $36=4p(3)$, por lo que $p=3$.
+
+\textbf{Paso 3.} El foco está a $3$ cm del vértice: $F(0,3)$.
+\end{solution}
+\end{example}
+
+\section{Ejercicios y problemas}
+
+\begin{exercise}{Parábolas}{ej-parabola}
+\begin{enumerate}
+  \item Obtén foco, directriz y apertura de $x^2=-16y$.
+  \item Analiza $(x+2)^2=12(y-1)$.
+  \item Analiza $(y-4)^2=-20(x+3)$.
+  \item Obtén la ecuación con vértice $(0,0)$ y foco $(-5,0)$.
+  \item Obtén la ecuación con vértice $(3,-2)$ y directriz $y=1$.
+  \item Convierte $y^2+6y-4x+1=0$ a forma ordinaria.
+  \item Calcula los extremos del lado recto de $(x-1)^2=8(y+2)$.
+\end{enumerate}
+\end{exercise}
+
+\begin{problem}{Aplicaciones}{prob-parabola}
+\begin{enumerate}
+  \item Un arco parabólico mide $10$ m de ancho y $5$ m de altura. Coloca el
+  vértice en la parte superior y obtén una ecuación para el arco.
+  \item Una antena tiene $2$ m de diámetro y $0.25$ m de profundidad.
+  Determina a qué distancia del vértice debe colocarse el receptor.
+  \item Encuentra los puntos de intersección de $y=x-1$ y $x^2=4y$.
+\end{enumerate}
+\end{problem}
+
+\section*{Resumen}\addcontentsline{toc}{section}{Resumen}
+\begin{properties}
+\[
+(y-k)^2=4p(x-h),\qquad (x-h)^2=4p(y-k).
+\]
+Foco a distancia $|p|$ del vértice; directriz a la misma distancia en sentido
+opuesto; longitud del lado recto $|4p|$.
+\end{properties}
