@@ -92,9 +92,13 @@
   coltitle=GAmorado,title={Idea geométrica},#1}
 \newtcolorbox{properties}[1][]{ga,colback=GAazul!5,colframe=GAazul,
   coltitle=GAazul,title={Propiedades},#1}
-\newtcolorbox{formula}[1][]{enhanced,breakable,colback=GArosa!7,
-  colframe=GArosa,boxrule=.6pt,arc=1mm,fonttitle=\bfseries\sffamily,
-  coltitle=GArosa,title={Fórmula clave},#1}
+\newtcolorbox{formula}[1][]{enhanced,breakable,
+  colback=GArosa!6,colframe=GArosa,boxrule=.7pt,arc=1mm,
+  colbacktitle=GArosa,coltitle=white,
+  fonttitle=\bfseries\sffamily,title={Fórmula clave},
+  attach boxed title to top left={xshift=2mm,yshift*=-\tcboxedtitleheight/2},
+  boxed title style={boxrule=0pt,arc=.8mm,left=2mm,right=2mm},
+  top=4mm,before skip=12pt,#1}
 
 \renewenvironment{proof}[1][Demostración]{%
   \par\pushQED{\qed}\normalfont
