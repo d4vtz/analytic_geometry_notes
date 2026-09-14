@@ -263,7 +263,7 @@ posible.
 \end{enumerate}
 \end{exercise}
 
-\section{Formas general y simétrica}
+\section{Formas general, simétrica y normal}
 
 \subsection{Forma general}
 
@@ -334,6 +334,94 @@ Escribe $2x+3y-12=0$ en forma simétrica.
 \end{solution}
 \end{example}
 
+\subsection{Forma normal}
+
+La forma normal describe una recta mediante su distancia al origen y la
+dirección de una perpendicular a ella. Sea $N$ el pie de la perpendicular
+trazada desde el origen hasta la recta. Definimos:
+\begin{itemize}
+  \item $p\geq0$: distancia del origen a la recta;
+  \item $\omega$: ángulo que forma el vector $\overrightarrow{ON}$ con el eje
+  $x$ positivo.
+\end{itemize}
+
+El vector unitario normal a la recta es
+\[
+\widehat{\boldsymbol n}=(\cos\omega,\sin\omega).
+\]
+Para cualquier punto $P(x,y)$ de la recta, la proyección de
+$\overrightarrow{OP}$ sobre esta dirección es precisamente $p$.
+
+\begin{formula}[title={Forma normal de la recta}]
+\[
+\boxed{x\cos\omega+y\sin\omega-p=0},
+\qquad p\geq0.
+\]
+\end{formula}
+
+\subsubsection*{Conversión desde la forma general}
+
+Partimos de $Ax+By+C=0$ y dividimos toda la ecuación entre
+$\sqrt{A^2+B^2}$:
+\[
+\frac{A}{\sqrt{A^2+B^2}}x+
+\frac{B}{\sqrt{A^2+B^2}}y+
+\frac{C}{\sqrt{A^2+B^2}}=0.
+\]
+Los dos primeros coeficientes satisfacen
+\[
+\left(\frac{A}{\sqrt{A^2+B^2}}\right)^2+
+\left(\frac{B}{\sqrt{A^2+B^2}}\right)^2=1,
+\]
+por lo que pueden identificarse con $\cos\omega$ y $\sin\omega$.
+
+\begin{algorithm}{Conversión a la forma normal}{alg-forma-normal}
+\begin{enumerate}
+  \item Calcula $L=\sqrt{A^2+B^2}$.
+  \item Divide toda la ecuación general entre $L$.
+  \item Si el término independiente queda positivo, multiplica toda la
+  ecuación por $-1$ para obtener la forma ``$-p$'', con $p\geq0$.
+  \item Identifica $\cos\omega$, $\sin\omega$ y $p$.
+\end{enumerate}
+\end{algorithm}
+
+\begin{example}{Conversión a la forma normal}{forma-normal}
+Convierte $3x+4y-20=0$ a la forma normal e interpreta sus elementos.
+\begin{solution}
+\textbf{Paso 1.} Calculamos el factor de normalización:
+\[
+L=\sqrt{3^2+4^2}=5.
+\]
+
+\textbf{Paso 2.} Dividimos toda la ecuación entre $5$:
+\[
+\frac35x+\frac45y-4=0.
+\]
+
+\textbf{Paso 3.} Comparamos con
+$x\cos\omega+y\sin\omega-p=0$:
+\[
+\cos\omega=\frac35,
+\qquad
+\sin\omega=\frac45,
+\qquad
+p=4.
+\]
+
+\textbf{Paso 4.} Determinamos la dirección normal:
+\[
+\omega=\arctan\left(\frac{4}{3}\right)\approx53.13^\circ.
+\]
+La recta se encuentra a $4$ unidades del origen y el segmento perpendicular
+desde el origen forma un ángulo aproximado de $53.13^\circ$ con el eje $x$.
+\end{solution}
+\end{example}
+
+\begin{remark}
+Una misma recta tiene dos vectores normales opuestos. La condición $p\geq0$
+elimina la ambigüedad y fija cuál de ellos se utiliza en la forma normal.
+\end{remark}
+
 \begin{exercise}{Formas de la recta}{ej-formas}
 \begin{enumerate}[label=\alph*)]
   \item Convierte $y=-3x+7$ a forma general.
@@ -341,6 +429,11 @@ Escribe $2x+3y-12=0$ en forma simétrica.
   \item Obtén los interceptos de $3x-2y-6=0$.
   \item Escribe en forma general la recta $\frac{x}{5}+\frac{y}{-2}=1$.
   \item Explica por qué $x=4$ no tiene forma pendiente--ordenada.
+  \item Convierte $5x+12y-26=0$ a forma normal e identifica $p$.
+  \item Convierte $-4x+3y+15=0$ a forma normal. Recuerda ajustar el signo
+  para que $p\geq0$.
+  \item Escribe en forma general la recta normal
+  $x\cos60^\circ+y\sin60^\circ-6=0$ sin funciones trigonométricas.
 \end{enumerate}
 \end{exercise}
 
@@ -391,7 +484,7 @@ m_1=-\frac AB=-\frac25.
 
 \textbf{Paso 2.} Buscamos su recíproco negativo:
 \[
-m_2=\frac52,qquad m_1m_2=-1.
+m_2=\frac52,\qquad m_1m_2=-1.
 \]
 
 \textbf{Paso 3.} Usamos $Q(-1,4)$:
@@ -602,6 +695,8 @@ y-y_1&=m(x-x_1),
 &y&=mx+b,\\[1mm]
 Ax+By+C&=0,
 &\frac xa+\frac yb&=1,\\[1mm]
+x\cos\omega+y\sin\omega-p&=0,
+&p&\geq0,\\[1mm]
 m_1=m_2&\Longrightarrow r_1\parallel r_2,
 &m_1m_2=-1&\Longrightarrow r_1\perp r_2.
 \end{aligned}
