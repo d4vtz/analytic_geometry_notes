@@ -1,0 +1,22 @@
+# Archivos auxiliares de LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Salidas locales
+main.pdf
+
+# Editores y sistema
+.vscode/
+.idea/
+.DS_Store
+*~
