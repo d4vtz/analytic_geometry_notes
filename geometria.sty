@@ -92,12 +92,16 @@
   coltitle=GAmorado,title={Idea geométrica},#1}
 \newtcolorbox{properties}[1][]{ga,colback=GAazul!5,colframe=GAazul,
   coltitle=GAazul,title={Propiedades},#1}
+% Dentro de ``formula`` la caja exterior ya aporta el énfasis visual; por eso
+% \boxed muestra solo su contenido y evita un segundo marco redundante.
+\newcommand{\GAunboxed}[1]{#1}
 \newtcolorbox{formula}[1][]{enhanced,breakable,
   colback=GArosa!6,colframe=GArosa,boxrule=.7pt,arc=1mm,
   colbacktitle=GArosa,coltitle=white,
   fonttitle=\bfseries\sffamily,title={Fórmula clave},
   attach boxed title to top left={xshift=2mm,yshift*=-\tcboxedtitleheight/2},
   boxed title style={boxrule=0pt,arc=.8mm,left=2mm,right=2mm},
+  before upper={\let\boxed\GAunboxed},
   top=4mm,before skip=12pt,#1}
 
 \renewenvironment{proof}[1][Demostración]{%
